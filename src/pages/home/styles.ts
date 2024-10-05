@@ -1,0 +1,20 @@
+export const contactButtonStyles = (theme: Record<string, string>) => ({
+	backgroundColor: `${theme.accentBright}`,
+	":hover": {
+		boxShadow: `0 5px 15px ${theme.accentBright}`,
+	},
+	textDecoration: "none",
+	color: "rgba(255, 255, 255, 1)",
+	padding: "15px 15px",
+	marginTop: "25px",
+	borderRadius: "4px",
+	borderWidth: "0px",
+	marginBottom: "20px",
+	width: "200px",
+	height: "50px",
+	fontWeight: "bold",
+	fontFamily: "Google Sans Regular",
+	fontSize: "17px",
+	transition: "all 0.2s ease-in-out",
+	cursor: "pointer",
+});

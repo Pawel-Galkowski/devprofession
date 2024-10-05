@@ -1,0 +1,113 @@
+.wheel {
+	animation: wheel-rotate 6s ease infinite;
+	transform-origin: center;
+	transform-box: fill-box;
+}
+
+@keyframes wheel-rotate {
+	50% {
+		transform: rotate(360deg);
+		animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+	}
+	100% {
+		transform: rotate(960deg);
+	}
+}
+
+#stripe {
+	animation: stripe-anim 3s linear infinite;
+	transform-origin: center;
+	transform-box: fill-box;
+}
+
+@keyframes stripe-anim {
+	25% {
+		transform: translate(10px, 0) rotate(-10deg);
+	}
+	75% {
+		transform: translateX(10px);
+	}
+}
+
+#bike {
+	animation: bike-anim 6s ease infinite;
+}
+
+@keyframes bike-anim {
+	0% {
+		transform: translateX(-1300px);
+	}
+	50% {
+		transform: translateX(0);
+		animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+	}
+	100% {
+		transform: translateX(1300px);
+	}
+}
+
+.circle {
+	animation: circle-anim ease infinite;
+	transform-origin: center;
+	transform-box: fill-box;
+	perspective: 0px;
+}
+
+.circle.c1 {
+	animation-duration: 2s;
+}
+
+.circle.c2 {
+	animation-duration: 3s;
+}
+
+.circle.c3 {
+	animation-duration: 1s;
+}
+
+.circle.c4 {
+	animation-duration: 1s;
+}
+
+.circle.c5 {
+	animation-duration: 2s;
+}
+
+.circle.c6 {
+	animation-duration: 3s;
+}
+
+@keyframes circle-anim {
+	50% {
+		transform: scale(0.2) rotateX(360deg) rotateY(360deg);
+	}
+}
+
+.four,
+#ou {
+	animation: four-anim cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+}
+
+.four.a {
+	transform-origin: bottom left;
+	animation-duration: 3s;
+	transform-box: fill-box;
+}
+
+.four.b {
+	transform-origin: bottom right;
+	animation-duration: 3s;
+	transform-box: fill-box;
+}
+
+#ou {
+	animation-duration: 6s;
+	transform-origin: center;
+	transform-box: fill-box;
+}
+
+@keyframes four-anim {
+	50% {
+		transform: scale(0.98);
+	}
+}
