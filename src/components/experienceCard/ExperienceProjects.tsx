@@ -1,10 +1,19 @@
 import React from "react";
 import { ExperienceProjectsDataProps, ObjectType } from "../../types";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import { ThemeEnum, themes } from "../../theme";
-import { v4 as uuidv4 } from "uuid";
-import { experienceCardDuration } from "./styles";
+import {
+	experienceCardBodyDiv,
+	experienceCardCompany,
+	experienceCardDescription,
+	experienceCardDuration,
+	experienceCardHeadingLeft,
+	experienceCardHeadingRight,
+	experienceCardInsideHeaderDiv,
+	technologiesSectionStyles,
+} from "./styles";
+import CustomItemList from "../customItemList";
 
 export const ExperienceProjects: React.FC<{
 	project: ExperienceProjectsDataProps;
@@ -14,37 +23,27 @@ export const ExperienceProjects: React.FC<{
 	);
 	const theme = themes[themeState];
 	return (
-		<Box className='experience-card-body-div' key={uuidv4()}>
-			<Box className='experience-card-inside-header-div'>
-				<Box className='experience-card-heading-left'>
-					<h3
-						className='experience-card-inside-title'
-						style={{ color: theme.text }}
-					>
+		<Box sx={experienceCardBodyDiv}>
+			<Box sx={experienceCardInsideHeaderDiv}>
+				<Box sx={experienceCardHeadingLeft}>
+					<Typography variant='h5' sx={experienceCardCompany(theme)}>
 						{project.role}
-					</h3>
+					</Typography>
 				</Box>
-				<Box className='experience-card-heading-right'>
-					<p
-						className='experience-card-duration'
-						style={{
-							...experienceCardDuration(theme),
-						}}
+				<Box sx={experienceCardHeadingRight}>
+					<Typography
+						variant='body1'
+						sx={[experienceCardDescription, experienceCardDuration(theme)]}
 					>
 						{project.duration}
-					</p>
+					</Typography>
 				</Box>
 			</Box>
-			<ul
-				className='experience-card-description-list'
-				style={{ color: theme.text }}
-			>
-				{project.description.map((item: string) => (
-					<li key={uuidv4()}>{item}</li>
-				))}
-			</ul>
-			<Box className='technologies-section-styles'>
-				Technologies & Frameworks: {project.technologies}
+			<CustomItemList item={project} />
+			<Box sx={technologiesSectionStyles}>
+				<Typography variant='body2'>
+					Technologies & Frameworks: {project.technologies}
+				</Typography>
 			</Box>
 		</Box>
 	);

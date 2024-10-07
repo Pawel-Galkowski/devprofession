@@ -1,5 +1,4 @@
 import { AppBar, Toolbar, Container, Typography, Button } from "@mui/material";
-import "./Header.css";
 import React, { useCallback } from "react";
 import MobileMenu from "./mobileMenu";
 import DesktopMenu from "./desktopMenu";

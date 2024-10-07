@@ -5,6 +5,7 @@ import { ThemeEnum, themes } from "../../theme";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { ObjectType } from "../../types";
 import { footerTextStyles } from "./styles";
+import { Typography } from "@mui/material";
 
 const Footer: React.FC = () => {
 	const themeState: ThemeEnum = useSelector(
@@ -12,10 +13,10 @@ const Footer: React.FC = () => {
 	);
 	const theme = themes[themeState];
 	return (
-		<p style={{ ...footerTextStyles(theme) }}>
+		<Typography variant="h5" sx={footerTextStyles(theme)}>
 			Made with <FavoriteIcon sx={{ fill: "#FF0000", fontSize: "1.3rem" }} /> by{" "}
 			{homePage.footer_information}
-		</p>
+		</Typography>
 	);
 };
 

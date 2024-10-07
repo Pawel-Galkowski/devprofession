@@ -1,9 +1,8 @@
 import React from "react";
-import "./ProjectCard.css";
 import { Fade } from "react-awesome-reveal";
 import { useSelector } from "react-redux";
 import { ThemeEnum, themes } from "../../theme";
-import { Box, Button, Link } from "@mui/material";
+import { Box, Button, Link, List, ListItem, Typography } from "@mui/material";
 import {
 	ObjectType,
 	ProjectsProps,
@@ -11,8 +10,12 @@ import {
 } from "../../types";
 import {
 	actionButonsSectionStyle,
+	languagesIconsStyle,
 	projectCardStyle,
 	projectInformationSectionStyle,
+	repositoryDescriptionStyle,
+	repositoryDetailsStyle,
+	repositoryNameStyle,
 } from "./styles";
 import { v4 as uuidv4 } from "uuid";
 
@@ -26,23 +29,23 @@ const ProjectCard: React.FC<{ repo: ProjectsProps }> = ({ repo }) => {
 		<Fade direction='down' duration={2000} triggerOnce>
 			<Box sx={projectCardStyle(theme)} key={uuidv4()}>
 				<Box className='repo-name-div'>
-					<p className='repo-name' style={{ color: theme.text }}>
+					<Typography variant='h4' sx={repositoryNameStyle(theme)}>
 						{repo.name}
-					</p>
+					</Typography>
 				</Box>
-				<p className='repo-description' style={{ color: theme.text }}>
+				<Typography variant='body2' sx={repositoryDescriptionStyle(theme)}>
 					{repo.description}
-				</p>
+				</Typography>
 				<Box sx={projectInformationSectionStyle(theme)}>
-					<Box className='repo-details'>
+					<Box sx={repositoryDetailsStyle}>
 						Technologies:
-						<ul className='dev-icons-languages'>
+						<List sx={languagesIconsStyle}>
 							{repo.technologies.map((logo: ProjectTechnologiesProps) => (
-								<li key={uuidv4()} title={logo.name}>
+								<ListItem key={uuidv4()} title={logo.name} disablePadding>
 									{logo.icon}
-								</li>
+								</ListItem>
 							))}
-						</ul>
+						</List>
 					</Box>
 					<Box sx={actionButonsSectionStyle}>
 						<Link href={repo.links.github} target='_blank'>

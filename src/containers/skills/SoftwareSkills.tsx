@@ -1,16 +1,17 @@
 import React from "react";
-import "./SoftwareSkill.css";
 import { SkillProps } from "../../types";
 import { v4 as uuidv4 } from "uuid";
+import { softwareSkillStyles } from "./styles";
+import { List, ListItem } from "@mui/material";
 
 const SoftwareSkill: React.FC<{ skills: SkillProps[] }> = ({ skills }) => (
-	<ul className='dev-icons'>
+	<List sx={softwareSkillStyles}>
 		{skills.map((logo: SkillProps) => (
-			<li key={uuidv4()} title={logo.skillName}>
+			<ListItem key={uuidv4()} title={logo.skillName}>
 				{logo.image}
-			</li>
+			</ListItem>
 		))}
-	</ul>
+	</List>
 );
 
 export default SoftwareSkill;

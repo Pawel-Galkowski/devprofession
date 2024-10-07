@@ -7,6 +7,7 @@ import ContactImg from "./ContactImg";
 import ExperienceImg from "./ExperienceImg";
 import EducationImg from "./EducationImg";
 import ProjectsImg from "./ProjectsImg";
+import NotFoundSVG from "./NotFoundSVG";
 
 export {
 	FrontEndImg,
@@ -18,4 +19,5 @@ export {
 	ContactImg,
 	EducationImg,
 	ProjectsImg,
+	NotFoundSVG
 };

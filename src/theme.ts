@@ -53,7 +53,9 @@ export enum ThemeEnum {
 
 export type ThemeType = ThemeEnum.dark | ThemeEnum.light;
 
-export const themes: Record<ThemeType, Record<string, string>> = {
+export type LocalTheme = Record<string, string>
+
+export const themes: Record<ThemeType, LocalTheme> = {
 	light: lightTheme,
 	dark: darkTheme,
 };

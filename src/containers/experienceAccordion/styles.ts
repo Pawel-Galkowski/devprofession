@@ -1,4 +1,6 @@
-export const accordionStyles = (theme: Record<string, string>) => ({
+import { LocalTheme } from "../../theme";
+
+export const accordionStyles = (theme: LocalTheme) => ({
 	background: theme.body,
 	color: theme.text,
 	border: 0,
@@ -32,4 +34,22 @@ export const accordionStyles = (theme: Record<string, string>) => ({
 		justifyContent: "space-between",
 		width: "100%",
 	},
+});
+
+export const experienceAccordStyles = () => ({
+	borderRadius: "5px",
+	transition: "all 0.2s ease-in-out",
+	"&:hover": {
+		color: "rgba(255, 255, 255, 1)",
+		boxShadow: "0 5px 15px #e2405f",
+	},
+});
+
+export const accordionTitleStyles = () => ({
+	paddingLeft: "0.5rem"
+});
+
+	
+export const accordionDurationStyles = () => ({
+	paddingRight: "2rem"
 });

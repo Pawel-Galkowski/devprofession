@@ -1,5 +1,5 @@
 import { Theme } from "@mui/material";
-import { ThemeEnum } from "../../theme";
+import { LocalTheme, ThemeEnum } from "../../theme";
 
 export const headerStyles = (theme: Theme) => ({
 	background: "transparent",
@@ -38,25 +38,23 @@ export const overlayMenuStyles = () => ({
 	position: "relative",
 });
 
-export const logoStyles =
-	(localTheme: Record<string, string>) => (theme: Theme) => ({
-		mr: 2,
+export const logoStyles = (localTheme: LocalTheme) => (theme: Theme) => ({
+	mr: 2,
+	color: localTheme.text,
+	textDecoration: "none",
+	fontFamily: "Google Sans Regular",
+	fontWeight: "bold",
+	[theme.breakpoints.down("sm")]: {
+		fontSize: "1.5rem",
+	},
+	"& a": {
 		color: localTheme.text,
 		textDecoration: "none",
-		fontFamily: "Google Sans Regular",
-		fontWeight: "bold",
-		[theme.breakpoints.down("sm")]: {
-			fontSize: "1.5rem",
-		},
-		"& a": {
-			color: localTheme.text,
-			textDecoration: "none",
-		},
-	});
+	},
+});
 
 export const buttonStyle =
-	(themeEnum: ThemeEnum, localTheme: Record<string, string>) =>
-	(theme: Theme) => ({
+	(themeEnum: ThemeEnum, localTheme: LocalTheme) => (theme: Theme) => ({
 		backgroundColor: localTheme.themeBackgroundIcon,
 		cursor: "pointer",
 		borderRadius: "50%",
@@ -79,16 +77,15 @@ export const buttonStyle =
 		},
 	});
 
-export const menuItemStyle = (theme: Record<string, string>) => ({
+export const menuItemStyle = () => ({
 	borderRadius: 5,
-	color: theme.text,
 	fontWeight: "bold",
 	whiteSpace: "nowrap",
 	transition: "all 0.2s ease-in-out",
 	padding: 0,
 });
 
-export const menuLinkItemStyle = (theme: Record<string, string>) => ({
+export const menuLinkItemStyle = (theme: LocalTheme) => ({
 	fontFamily: "Google Sans Regular",
 	color: theme.text,
 	display: "block",
@@ -96,7 +93,7 @@ export const menuLinkItemStyle = (theme: Record<string, string>) => ({
 	textDecoration: "none",
 });
 
-export const menuMobileLinkItemStyle = (theme: Record<string, string>) => ({
+export const menuMobileLinkItemStyle = (theme: LocalTheme) => ({
 	fontFamily: "Google Sans Regular",
 	color: "#fff",
 	display: "block",
@@ -128,4 +125,47 @@ export const desktopMenuBoxStyles = (theme: Theme) => ({
 	[theme.breakpoints.down("lg")]: {
 		display: "none",
 	},
+});
+
+export const homeLinkStyle = () => ({
+	":hover": {
+		boxShadow: "0 2px 10px #2ab0ee",
+		backgroundColor: "transparent",
+		color: "#ffffff",
+	},
+});
+export const educationLinkStyle = () => ({
+	":hover": {
+		boxShadow: "0 2px 10px #eb6559",
+		backgroundColor: "transparent",
+		color: "#ffffff",
+	},
+});
+export const experienceLinkStyle = () => ({
+	":hover": {
+		boxShadow: "0 2px 10px #f7b908",
+		backgroundColor: "transparent",
+		color: "#ffffff",
+	},
+});
+export const projectsLinkStyle = () => ({
+	":hover": {
+		boxShadow: "0 2px 10px #e44160",
+		backgroundColor: "transparent",
+		color: "#ffffff",
+	},
+});
+export const contactLinkStyle = () => ({
+	":hover": {
+		boxShadow: "0 1px 10px #47a148",
+		backgroundColor: "transparent",
+		color: "#ffffff",
+	},
+});
+
+export const mobileMenuExitIconStyle = () => ({
+	position: "absolute",
+	top: 10,
+	right: 10,
+	zIndex: 1500,
 });

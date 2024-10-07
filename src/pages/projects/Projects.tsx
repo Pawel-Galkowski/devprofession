@@ -2,13 +2,23 @@ import React from "react";
 import ProjectCard from "../../components/projectCard";
 import { Fade } from "react-awesome-reveal";
 import { projectsHeader, projects, socialMediaLinks } from "../../data";
-import "./Projects.css";
 import { ProjectsImg } from "../../assests/svg/images";
 import { useSelector } from "react-redux";
 import { ThemeEnum, themes } from "../../theme";
-import { Box, Button, Link } from "@mui/material";
+import { Box, Button, Link, Typography } from "@mui/material";
 import { ObjectType, ProjectsProps } from "../../types";
 import { v4 as uuidv4 } from "uuid";
+import {
+	buttonStyles,
+	projectsBoxDescriptionStyles,
+	projectsHeaderDetailTextStyles,
+	projectsHeadingImgStyles,
+	projectsHeadingStyles,
+	projectsHeadingTextDivStyles,
+	projectsHeadingTextStyles,
+	projectsPageStyles,
+	repoCardsDivMainStyles,
+} from "./styles";
 
 const Projects: React.FC = () => {
 	const themeState: ThemeEnum = useSelector(
@@ -17,38 +27,32 @@ const Projects: React.FC = () => {
 	const theme = themes[themeState];
 
 	return (
-		<Box className='projects-main'>
-			<Box className='projects-heading-div'>
+		<Box sx={projectsPageStyles}>
+			<Box sx={projectsHeadingStyles}>
 				<Fade duration={2000} direction='left' cascade triggerOnce>
-					<Box className='projects-heading-img-div'>
+					<Box sx={projectsHeadingImgStyles}>
 						<ProjectsImg />
 					</Box>
 				</Fade>
 				<Fade duration={2000} direction='right' cascade triggerOnce>
-					<Box className='projects-heading-text-div'>
-						<h1 className='projects-heading-text' style={{ color: theme.text }}>
+					<Box sx={projectsHeadingTextDivStyles}>
+						<Typography variant='h2' sx={projectsHeadingTextStyles(theme)}>
 							{projectsHeader.title}
-						</h1>
-						<p
-							className='projects-header-detail-text'
-							style={{ color: theme.secondaryText }}
-						>
+						</Typography>
+						<Typography variant='h6' sx={projectsHeaderDetailTextStyles(theme)}>
 							{projectsHeader.description}
-						</p>
+						</Typography>
 					</Box>
 				</Fade>
 			</Box>
-			<Box className='projects-box-description'>
-				<Box className='repo-cards-div-main'>
+			<Box sx={projectsBoxDescriptionStyles}>
+				<Box sx={repoCardsDivMainStyles}>
 					{projects.map((repo: ProjectsProps) => (
 						<ProjectCard repo={repo} key={uuidv4()} />
 					))}
 				</Box>
 				<Link href={socialMediaLinks.github} target='_blank'>
-					<Button
-						variant='contained'
-						sx={{ backgroundColor: theme.accentBright }}
-					>
+					<Button variant='contained' sx={buttonStyles(theme)}>
 						More Projects (Github)
 					</Button>
 				</Link>

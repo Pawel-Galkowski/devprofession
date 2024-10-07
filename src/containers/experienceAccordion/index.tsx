@@ -1,5 +1,4 @@
 import React from "react";
-import "./ExperienceAccordion.css";
 import {
 	Accordion,
 	AccordionDetails,
@@ -9,7 +8,7 @@ import {
 import { ExperienceDataProps, ObjectType } from "../../types";
 import { v4 as uuidv4 } from "uuid";
 import ExperienceCard from "../../components/experienceCard";
-import { accordionStyles } from "./styles";
+import { accordionDurationStyles, accordionStyles, accordionTitleStyles, experienceAccordStyles } from "./styles";
 import { useSelector } from "react-redux";
 import { ThemeEnum, themes } from "../../theme";
 
@@ -21,7 +20,7 @@ const ExperienceAccordion: React.FC<{ children: ExperienceDataProps[] }> = ({
 	);
 	const theme = themes[themeState];
 	return (
-		<Box className='experience-accord'>
+		<Box sx={experienceAccordStyles}>
 			{children.map((data: ExperienceDataProps, index) => (
 				<Accordion
 					key={uuidv4()}
@@ -29,8 +28,8 @@ const ExperienceAccordion: React.FC<{ children: ExperienceDataProps[] }> = ({
 					defaultExpanded={index === 0}
 				>
 					<AccordionSummary>
-						<Box sx={{ paddingLeft: "0.5rem" }}>{data.title}</Box>
-						<Box sx={{ paddingRight: "2rem" }}>{data.duration}</Box>
+						<Box sx={accordionTitleStyles}>{data.title}</Box>
+						<Box sx={accordionDurationStyles}>{data.duration}</Box>
 					</AccordionSummary>
 					<AccordionDetails>
 						<ExperienceCard>{data}</ExperienceCard>

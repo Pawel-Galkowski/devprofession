@@ -1,10 +1,18 @@
 import React from "react";
-import "./home.css";
 import Skills from "../../containers/skills/Skills";
-import { Box } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { FeelingProudImg } from "../../assests/svg/images";
 import SocialMedia from "../../components/socialMedia";
-import { contactButtonStyles } from "./styles";
+import {
+	contactButtonBoxStyles,
+	contactButtonStyles,
+	greetingHeadingStyles,
+	greetingImageStyles,
+	greetingTextStyles,
+	homePageHeaderStyles,
+	homePageStyles,
+	informationBoxStyles,
+} from "./styles";
 import { homePage } from "../../data";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
@@ -19,31 +27,40 @@ const Home: React.FC = () => {
 	const theme = themes[themeState];
 
 	return (
-		<Box>
-			<Box className='greet-main'>
-				<Box className='greeting-text-div'>
+		<Box sx={homePageStyles}>
+			<Box sx={homePageHeaderStyles}>
+				<Box sx={informationBoxStyles}>
 					<Fade duration={2000} direction='left' triggerOnce>
-						<h1 className='greeting-text'>{homePage.title}</h1>
-						<p
-							className='greeting-text-p subTitle'
-							style={{ color: theme.secondaryText }}
-						>
-							<span>I&apos;m </span>
+						<Typography sx={greetingHeadingStyles} variant='h2'>
+							{homePage.title}
+						</Typography>
+
+						<Typography variant='h5' sx={greetingTextStyles(theme)}>
+							I&apos;m{" "}
 							<span style={{ color: theme.accentColor }}>
 								{homePage.full_name}.{" "}
 							</span>
 							{homePage.subTitle}
-						</p>
+						</Typography>
+
 						<SocialMedia />
-						<Box className='data-repo-btn-div'>
+						<Box sx={contactButtonBoxStyles}>
 							<Link to='/contact'>
-								<button style={contactButtonStyles(theme)}>Contact Me</button>
+								<Button
+									sx={contactButtonStyles(theme)}
+									variant='contained'
+									size='large'
+								>
+									Contact Me
+								</Button>
 							</Link>
 						</Box>
 					</Fade>
 				</Box>
 				<Fade duration={2000} direction='right' triggerOnce>
-					<FeelingProudImg className='greeting-image-div' />
+					<Box sx={greetingImageStyles}>
+						<FeelingProudImg />
+					</Box>
 				</Fade>
 			</Box>
 			<Skills />

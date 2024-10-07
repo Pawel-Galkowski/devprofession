@@ -1,13 +1,13 @@
 import React from "react";
-import "./Certifications.css";
 import { Fade } from "react-awesome-reveal";
 import { certifications } from "../../data";
 import CertificationCard from "../../components/certificationCard";
 import { useSelector } from "react-redux";
 import { ThemeEnum, themes } from "../../theme";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { CertificationProps, ObjectType } from "../../types";
 import { v4 as uuidv4 } from "uuid";
+import { certificationHeaderStyles, certificationBodyStyles, certificationStyles } from "./styles";
 
 const Certifications: React.FC = () => {
 	const themeState: ThemeEnum = useSelector(
@@ -16,22 +16,13 @@ const Certifications: React.FC = () => {
 	const theme = themes[themeState];
 
 	return (
-		<Box
-			sx={{
-				display: "flex",
-				flexDirection: "column",
-				alignItems: "center",
-				justifyContent: "center",
-			}}
-		>
-			<Box className='certs-header-div'>
-				<Fade duration={2000} direction='down' triggerOnce>
-					<h1 className='certs-header' style={{ color: theme.text }}>
-						Certifications
-					</h1>
-				</Fade>
-			</Box>
-			<Box className='certs-body-div'>
+		<Box sx={certificationStyles}>
+			<Fade duration={2000} direction='down' triggerOnce>
+				<Typography variant='h2' sx={certificationHeaderStyles(theme)}>
+					Certifications
+				</Typography>
+			</Fade>
+			<Box sx={certificationBodyStyles}>
 				{certifications.map((cert: CertificationProps) => (
 					<CertificationCard certificate={cert} key={uuidv4()} />
 				))}

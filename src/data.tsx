@@ -152,7 +152,7 @@ export const experience: ExperienceProps = {
 			projects: [
 				{
 					role: "Software Engineer",
-					description: [
+					descriptions: [
 						"Maintain multilingual AI-based service with speech-to-write solution",
 						"Work directly with Copilot Studio and automatic database solution system",
 						"Integration with Artificial Intelligence systems",
@@ -163,7 +163,7 @@ export const experience: ExperienceProps = {
 				},
 				{
 					role: "Mobile Developer",
-					description: [
+					descriptions: [
 						"Developed end-to-end solutions for mobile healthcare applications",
 						"Ongoing contact with clients to establish project requirements and provide updates",
 						"Professional maintenance and troubleshooting",
@@ -173,7 +173,7 @@ export const experience: ExperienceProps = {
 				},
 				{
 					role: "FrontEnd Developer",
-					description: [
+					descriptions: [
 						"Development of an insurance sales application",
 						"Implemented integration with multiple internal systems and custom component library",
 						"Cooperation with external UX Team",
@@ -191,7 +191,7 @@ export const experience: ExperienceProps = {
 			logo: <INGLogoImg />,
 			duration: "12/2020 - 05/2022",
 			location: "Katowice, Poland / hybrid-work",
-			description: [
+			descriptions: [
 				"Maintained cross-platform banking system",
 				"Development of a new JavaScript web component library on the basis of graphical designs",
 				"Implemented a storybook with detailed information about the components to increase developer productivity",
@@ -206,7 +206,7 @@ export const experience: ExperienceProps = {
 			logo: <IKLogoImg />,
 			duration: "07/2018 - 12/2020",
 			location: "Wroclaw, Poland",
-			description: [
+			descriptions: [
 				"Implemented a dashboard for client tickets, resulti ng in a 40% reduction in calls",
 				"Created responsive websites for clients using WordPress and Joomla which replaced nonresponsive pages and resulted in at least 18% faster load time",
 				"Implemented Google tools to generate 10% to 20% more visitors per page with changes based on statistics (Google Analytics, Search Console, Google Trends, Google Tag Manager)",

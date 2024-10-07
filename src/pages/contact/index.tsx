@@ -1,15 +1,20 @@
 import React from "react";
 import { Fade, Flip } from "react-awesome-reveal";
-import "./ContactComponent.css";
-import { homePage, contactPageData, socialMediaLinks } from "../../data";
+import { homePage, contactPageData } from "../../data";
 import { useSelector } from "react-redux";
 import { ThemeEnum, themes } from "../../theme";
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { ObjectType } from "../../types";
-import { resumeButtonStyles } from "./styles";
-import { LinkedIn, Email } from "@mui/icons-material";
+import {
+	basicContactStyles,
+	contactDetailTextStyles,
+	contactTextStyles,
+	resumeButtonStyles,
+	contactHeaderStyles,
+} from "./styles";
 import { Link } from "react-router-dom";
 import { ContactImg } from "../../assests/svg/images";
+import SocialMedia from "../../components/socialMedia";
 
 const Contact: React.FC = () => {
 	const themeState: ThemeEnum = useSelector(
@@ -18,39 +23,19 @@ const Contact: React.FC = () => {
 	const theme = themes[themeState];
 
 	return (
-		<Box className='basic-contact'>
+		<Box sx={basicContactStyles}>
 			<Fade duration={1000} direction='left'>
 				<ContactImg />
 			</Fade>
 			<Fade duration={1000} direction='right'>
-				<Box className='contact-heading-text-div'>
-					<h1 className='contact-heading-text' style={{ color: theme.text }}>
+				<Box sx={contactHeaderStyles}>
+					<Typography variant='h2' sx={contactTextStyles(theme)}>
 						{contactPageData.title}
-					</h1>
-					<p
-						className='contact-header-detail-text subTitle'
-						style={{ color: theme.secondaryText }}
-					>
+					</Typography>
+					<Typography variant='body1' sx={contactDetailTextStyles(theme)}>
 						{contactPageData.description}
-					</p>
-					<Box className='social-media-div'>
-						<Link
-							to={socialMediaLinks.linkedin}
-							className='icon-button linkedin'
-							target='_blank'
-							rel='noopener noreferrer'
-						>
-							<LinkedIn className='linkedin' />
-						</Link>
-						<Link
-							to={`mailto:${socialMediaLinks.gmail}`}
-							className='icon-button google'
-							target='_blank'
-							rel='noopener noreferrer'
-						>
-							<Email />
-						</Link>
-					</Box>
+					</Typography>
+					<SocialMedia linkedin gmail />
 					<Flip delay={1200} direction='vertical' triggerOnce>
 						<Link to={homePage.resumeLink} target='_blank'>
 							<Button

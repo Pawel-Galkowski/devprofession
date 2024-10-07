@@ -1,35 +1,57 @@
 import React from "react";
-import "./SocialMedia.css";
 import { socialMediaLinks } from "../../data";
 import { Box, Link } from "@mui/material";
 import { GitHub, LinkedIn, Email } from "@mui/icons-material";
+import {
+	socialMediaStyles,
+	githubStyles,
+	linkedinStyles,
+	gmailStyles,
+	iconButtonStyles,
+} from "./styles";
 
-const SocialMedia: React.FC = () => (
-	<Box className='social-media-div'>
-		<Link
-			href={socialMediaLinks.github}
-			className='icon-button github'
-			target='_blank'
-			rel='noopener noreferrer'
-		>
-			<GitHub />
-		</Link>
-		<Link
-			href={socialMediaLinks.linkedin}
-			className='icon-button linkedin'
-			target='_blank'
-			rel='noopener noreferrer'
-		>
-			<LinkedIn className='linkedin' />
-		</Link>
-		<Link
-			href={`mailto:${socialMediaLinks.gmail}`}
-			className='icon-button google'
-			target='_blank'
-			rel='noopener noreferrer'
-		>
-			<Email />
-		</Link>
+export interface RequiredSocialMediaProps {
+	github?: boolean;
+	linkedin?: boolean;
+	gmail?: boolean;
+}
+
+const SocialMedia: React.FC<RequiredSocialMediaProps> = ({
+	github,
+	linkedin,
+	gmail,
+}) => (
+	<Box sx={socialMediaStyles}>
+		{github && (
+			<Link
+				href={socialMediaLinks.github}
+				sx={[githubStyles, iconButtonStyles]}
+				target='_blank'
+				rel='noopener noreferrer'
+			>
+				<GitHub />
+			</Link>
+		)}
+		{linkedin && (
+			<Link
+				href={socialMediaLinks.linkedin}
+				sx={[linkedinStyles, iconButtonStyles]}
+				target='_blank'
+				rel='noopener noreferrer'
+			>
+				<LinkedIn className='linkedin' />
+			</Link>
+		)}
+		{gmail && (
+			<Link
+				href={`mailto:${socialMediaLinks.gmail}`}
+				sx={[gmailStyles, iconButtonStyles]}
+				target='_blank'
+				rel='noopener noreferrer'
+			>
+				<Email />
+			</Link>
+		)}
 	</Box>
 );
 

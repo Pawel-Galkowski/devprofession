@@ -1,5 +1,4 @@
 import React from "react";
-import "./DegreeCard.css";
 import { Fade, Flip } from "react-awesome-reveal";
 import { useSelector } from "react-redux";
 import { ThemeEnum, themes } from "../../theme";
@@ -10,7 +9,16 @@ import {
 	bodyCardStyles,
 	imgStyles,
 	cardDegreeSectionStyles,
+	bodyHeaderStyles,
+	bodyHeaderTitleStyles,
+	cardSubtitleStyles,
+	cardTitleStyles,
+	degreeCardStyles,
+	durationDesktopStyles,
+	durationMobileStyles,
+	buttonLinkStyles,
 } from "./styles";
+import CustomItemList from "../customItemList";
 
 const DegreeCard: React.FC<{ degree: DegreeProps }> = ({ degree }) => {
 	const themeState: ThemeEnum = useSelector(
@@ -19,42 +27,36 @@ const DegreeCard: React.FC<{ degree: DegreeProps }> = ({ degree }) => {
 	const theme = themes[themeState];
 
 	return (
-		<Box className='degree-card'>
+		<Box sx={degreeCardStyles}>
 			<Flip direction='vertical' duration={2000} triggerOnce>
 				<Box sx={imgStyles(theme)}>{degree.logo}</Box>
 			</Flip>
 			<Fade direction='right' duration={2000} triggerOnce>
 				<Box sx={cardDegreeSectionStyles}>
 					<Box sx={bodyCardStyles(theme)}>
-						<Box
-							className='body-header'
-							style={{ backgroundColor: theme.accentColor }}
-						>
-							<Box className='body-header-title'>
-								<h2 className='card-title'>{degree.title}</h2>
-								<h3 className='card-subtitle'>{degree.subtitle}</h3>
+						<Box sx={bodyHeaderStyles(theme)}>
+							<Box sx={bodyHeaderTitleStyles}>
+								<Typography variant='h4' sx={cardTitleStyles}>
+									{degree.title}
+								</Typography>
+								<Typography variant='h6' sx={durationDesktopStyles}>
+									{degree.duration}
+								</Typography>
 							</Box>
-							<Box className='body-header-duration'>
-								<h3 className='duration'>{degree.duration}</h3>
-							</Box>
+							<Typography variant='h5' sx={cardSubtitleStyles}>
+								{degree.subtitle}
+							</Typography>
+							<Typography variant='h6' sx={durationMobileStyles}>
+								{degree.duration}
+							</Typography>
 						</Box>
-						<ul className='custom-list-style'>
-							{degree.descriptions.map((sentence: string) => (
-								<li
-									className='content-list'
-									style={{ color: theme.text }}
-									key={sentence}
-								>
-									{sentence}
-								</li>
-							))}
-						</ul>
+						<CustomItemList item={degree} />
 					</Box>
 					<Link
 						href={degree.website_link}
 						target='_blank'
 						rel='noopener noreferrer'
-						style={{ textDecoration: "none", textAlign: "center" }}
+						sx={buttonLinkStyles}
 					>
 						<Typography sx={visitButtonStyles(theme)} variant='body2'>
 							Visit Website

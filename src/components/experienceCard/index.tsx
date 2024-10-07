@@ -1,8 +1,7 @@
 import React from "react";
-import "./ExperienceCard.css";
 import { useSelector } from "react-redux";
 import { ThemeEnum, themes } from "../../theme";
-import { Box, Link } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 import {
 	ExperienceDataProps,
 	ExperienceProjectsDataProps,
@@ -10,7 +9,20 @@ import {
 } from "../../types";
 import { v4 as uuidv4 } from "uuid";
 import { ExperienceProjects } from "./ExperienceProjects";
-import { experienceCardLocation } from "./styles";
+import {
+	experienceCard,
+	experienceCardBodyDiv,
+	experienceCardCompany,
+	experienceCardDescription,
+	experienceCardHeaderDiv,
+	experienceCardHeadingLeft,
+	experienceCardHeadingRight,
+	experienceCardLocation,
+	experienceCardLogoDiv,
+	experienceCardTitle,
+	technologiesSectionStyles,
+} from "./styles";
+import CustomItemList from "../customItemList";
 
 const ExperienceCard: React.FC<{ children: ExperienceDataProps }> = ({
 	children,
@@ -21,24 +33,15 @@ const ExperienceCard: React.FC<{ children: ExperienceDataProps }> = ({
 	const theme = themes[themeState];
 
 	return (
-		<Box
-			className='experience-card'
-			style={{
-				border: `1px solid ${theme.accentBright}`,
-				backgroundColor: theme.avatarMisc,
-			}}
-		>
-			<Box className='experience-card-logo-div'>{children.logo}</Box>
-			<Box className='experience-card-body-div'>
-				<Box className='experience-card-header-div'>
-					<Box className='experience-card-heading-left'>
-						<h3 className='experience-card-title' style={{ color: theme.text }}>
+		<Box sx={experienceCard(theme)}>
+			<Box sx={experienceCardLogoDiv}>{children.logo}</Box>
+			<Box sx={experienceCardBodyDiv}>
+				<Box sx={experienceCardHeaderDiv}>
+					<Box sx={experienceCardHeadingLeft}>
+						<Typography variant='h4' sx={experienceCardTitle(theme)}>
 							{children.title}
-						</h3>
-						<p
-							className='experience-card-company'
-							style={{ color: theme.secondaryText }}
-						>
+						</Typography>
+						<Typography variant='body1' sx={experienceCardCompany(theme)}>
 							<Link
 								href={children.company_url}
 								target='_blank'
@@ -46,36 +49,30 @@ const ExperienceCard: React.FC<{ children: ExperienceDataProps }> = ({
 							>
 								{children.company}
 							</Link>
-						</p>
+						</Typography>
 					</Box>
-					<Box className='experience-card-heading-right'>
-						<p
+					<Box sx={experienceCardHeadingRight}>
+						<Typography
+							variant='body1'
+							sx={experienceCardLocation(theme)}
 							className='experience-card-location'
-							style={{
-								...experienceCardLocation(theme),
-							}}
 						>
 							{children.location}
-						</p>
+						</Typography>
 					</Box>
 				</Box>
-				<Box
-					className='experience-card-description'
-					style={{ color: theme.text }}
-				>
+				<Box sx={experienceCardDescription} style={{ color: theme.text }}>
 					{"projects" in children ? (
 						children.projects.map((item: ExperienceProjectsDataProps) => (
 							<ExperienceProjects project={item} key={uuidv4()} />
 						))
 					) : (
 						<>
-							<ul className='experience-card-description-simple-list'>
-								{children.description.map((item: string) => (
-									<li key={uuidv4()}>{item}</li>
-								))}
-							</ul>
-							<Box className='technologies-section-styles'>
-								Technologies & Frameworks: {children.technologies}
+							<CustomItemList item={children} />
+							<Box sx={technologiesSectionStyles}>
+								<Typography variant='body2'>
+									Technologies & Frameworks: {children.technologies}
+								</Typography>
 							</Box>
 						</>
 					)}

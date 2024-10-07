@@ -5,11 +5,17 @@ import { useSelector } from "react-redux";
 import { ObjectType } from "../../types";
 import { ThemeEnum, themes } from "../../theme";
 import {
+	contactLinkStyle,
+	educationLinkStyle,
+	experienceLinkStyle,
+	homeLinkStyle,
 	menuItemStyle,
 	menuMobileLinkItemStyle,
 	mobileMenuBoxStyles,
+	mobileMenuExitIconStyle,
 	mobileMenuModalStyles,
 	overlayMenuStyles,
+	projectsLinkStyle,
 } from "./styles";
 import { Link } from "react-router-dom";
 
@@ -52,57 +58,49 @@ const MobileMenu: React.FC = () => {
 				sx={mobileMenuModalStyles}
 			>
 				<Box sx={overlayMenuStyles}>
-					<IconButton
-						onClick={handleCloseNavMenu}
-						sx={{ position: "absolute", top: 10, right: 10, zIndex: 1500 }}
-					>
+					<IconButton onClick={handleCloseNavMenu} sx={mobileMenuExitIconStyle}>
 						<Close htmlColor='#fff' />
 					</IconButton>
-					<MenuItem
-						className='homei'
-						sx={menuItemStyle(theme)}
-						onClick={handleCloseNavMenu}
-					>
-						<Link to='/' style={menuMobileLinkItemStyle(theme)}>
+					<Link to='/' style={menuMobileLinkItemStyle(theme)}>
+						<MenuItem
+							sx={[menuItemStyle, homeLinkStyle]}
+							onClick={handleCloseNavMenu}
+						>
 							Home
-						</Link>
-					</MenuItem>
-					<MenuItem
-						className='ec'
-						sx={menuItemStyle(theme)}
-						onClick={handleCloseNavMenu}
-					>
-						<Link to='/education' style={menuMobileLinkItemStyle(theme)}>
+						</MenuItem>
+					</Link>
+					<Link to='/education' style={menuMobileLinkItemStyle(theme)}>
+						<MenuItem
+							sx={[menuItemStyle, educationLinkStyle]}
+							onClick={handleCloseNavMenu}
+						>
 							Education and Certifications
-						</Link>
-					</MenuItem>
-					<MenuItem
-						className='xp'
-						sx={menuItemStyle(theme)}
-						onClick={handleCloseNavMenu}
-					>
-						<Link to='/experience' style={menuMobileLinkItemStyle(theme)}>
+						</MenuItem>
+					</Link>
+					<Link to='/experience' style={menuMobileLinkItemStyle(theme)}>
+						<MenuItem
+							sx={[menuItemStyle, experienceLinkStyle]}
+							onClick={handleCloseNavMenu}
+						>
 							Experience
-						</Link>
-					</MenuItem>
-					<MenuItem
-						className='projects'
-						sx={menuItemStyle(theme)}
-						onClick={handleCloseNavMenu}
-					>
-						<Link to='/projects' style={menuMobileLinkItemStyle(theme)}>
+						</MenuItem>
+					</Link>
+					<Link to='/projects' style={menuMobileLinkItemStyle(theme)}>
+						<MenuItem
+							sx={[menuItemStyle, projectsLinkStyle]}
+							onClick={handleCloseNavMenu}
+						>
 							Projects
-						</Link>
-					</MenuItem>
-					<MenuItem
-						className='cr'
-						sx={menuItemStyle(theme)}
-						onClick={handleCloseNavMenu}
-					>
-						<Link to='/contact' style={menuMobileLinkItemStyle(theme)}>
+						</MenuItem>
+					</Link>
+					<Link to='/contact' style={menuMobileLinkItemStyle(theme)}>
+						<MenuItem
+							sx={[menuItemStyle, contactLinkStyle]}
+							onClick={handleCloseNavMenu}
+						>
 							Contact and Resume
-						</Link>
-					</MenuItem>
+						</MenuItem>
+					</Link>
 				</Box>
 			</Modal>
 		</Box>

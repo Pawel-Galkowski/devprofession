@@ -1,7 +1,7 @@
 import React from "react";
 import { Fade } from "react-awesome-reveal";
 import { useSelector } from "react-redux";
-import { ThemeEnum } from "../../theme";
+import { ThemeEnum, themes } from "../../theme";
 import {
 	Box,
 	CardContent,
@@ -22,15 +22,17 @@ const CertificationCard: React.FC<{
 		(state: ObjectType) => state.theme.value,
 	);
 
+	const theme = themes[themeState];
+
 	return (
 		<Fade duration={2000} direction='up' cascade triggerOnce>
 			<Card sx={cardStyles(themeState)}>
 				<Box sx={imageStyles}>{certificate.logo}</Box>
 				<CardContent>
-					<Typography gutterBottom variant='h5' component='div'>
+					<Typography gutterBottom variant='h5'>
 						{certificate.title}
 					</Typography>
-					<Typography variant='body2' sx={{ color: "text.secondary" }}>
+					<Typography variant='body2' sx={{ color: theme.secondaryText }}>
 						{certificate.subtitle}
 					</Typography>
 				</CardContent>

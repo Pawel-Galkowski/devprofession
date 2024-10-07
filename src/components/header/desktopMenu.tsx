@@ -4,9 +4,14 @@ import { useSelector } from "react-redux";
 import { ObjectType } from "../../types";
 import { ThemeEnum, themes } from "../../theme";
 import {
+	contactLinkStyle,
 	desktopMenuBoxStyles,
+	educationLinkStyle,
+	experienceLinkStyle,
+	homeLinkStyle,
 	menuItemStyle,
 	menuLinkItemStyle,
+	projectsLinkStyle,
 } from "./styles";
 import { Link } from "react-router-dom";
 
@@ -19,27 +24,27 @@ const DesktopMenu: React.FC = () => {
 
 	return (
 		<Box sx={desktopMenuBoxStyles}>
-			<MenuItem className='homei' sx={menuItemStyle(theme)}>
+			<MenuItem sx={[menuItemStyle, homeLinkStyle]}>
 				<Link to='/' style={menuLinkItemStyle(theme)}>
 					Home
 				</Link>
 			</MenuItem>
-			<MenuItem className='ec' sx={menuItemStyle(theme)}>
+			<MenuItem sx={[menuItemStyle, educationLinkStyle]}>
 				<Link to='/education' style={menuLinkItemStyle(theme)}>
 					Education and Certifications
 				</Link>
 			</MenuItem>
-			<MenuItem className='xp' href='/experience' sx={menuItemStyle(theme)}>
+			<MenuItem sx={[menuItemStyle, experienceLinkStyle]}>
 				<Link to='/experience' style={menuLinkItemStyle(theme)}>
 					Experience
 				</Link>
 			</MenuItem>
-			<MenuItem className='projects' sx={menuItemStyle(theme)}>
+			<MenuItem sx={[menuItemStyle, projectsLinkStyle]}>
 				<Link to='/projects' style={menuLinkItemStyle(theme)}>
 					Projects
 				</Link>
 			</MenuItem>
-			<MenuItem className='cr' sx={menuItemStyle(theme)}>
+			<MenuItem sx={[menuItemStyle, contactLinkStyle]}>
 				<Link to='/contact' style={menuLinkItemStyle(theme)}>
 					Contact and Resume
 				</Link>

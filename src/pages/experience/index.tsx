@@ -1,13 +1,21 @@
 import React from "react";
 import ExperienceAccordion from "../../containers/experienceAccordion";
-import "./Experience.css";
 import { experience } from "../../data";
 import { Fade } from "react-awesome-reveal";
 import { useSelector } from "react-redux";
 import { ThemeEnum, themes } from "../../theme";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { ObjectType } from "../../types";
 import { ExperienceImg } from "../../assests/svg/images";
+import {
+	experienceHeaderDetailTextStyles,
+	experienceHeaderStyles,
+	experienceHeadingImgStyles,
+	experienceHeadingSubTextStyles,
+	experienceHeadingStyles,
+	experienceHeadingTextStyles,
+	experienceMainStyles,
+} from "./styles";
 
 const Experience: React.FC = () => {
 	const themeState: ThemeEnum = useSelector(
@@ -16,37 +24,29 @@ const Experience: React.FC = () => {
 	const theme = themes[themeState];
 
 	return (
-		<Box className='experience-main'>
-			<Box className='basic-experience'>
-				<Box className='experience-heading-div'>
-					<Fade duration={2000} direction='left' cascade triggerOnce>
-						<Box className='experience-heading-img-div'>
-							<ExperienceImg />
-						</Box>
-					</Fade>
-					<Fade duration={2000} direction='right' cascade triggerOnce>
-						<Box className='experience-heading-text-div'>
-							<h1
-								className='experience-heading-text'
-								style={{ color: theme.text }}
-							>
-								{experience.title}
-							</h1>
-							<h3
-								className='experience-heading-sub-text'
-								style={{ color: theme.text }}
-							>
-								{experience.subtitle}
-							</h3>
-							<p
-								className='experience-header-detail-text'
-								style={{ color: theme.secondaryText }}
-							>
-								{experience.description}
-							</p>
-						</Box>
-					</Fade>
-				</Box>
+		<Box sx={experienceMainStyles}>
+			<Box sx={experienceHeaderStyles}>
+				<Fade duration={2000} direction='left' cascade triggerOnce>
+					<Box sx={experienceHeadingImgStyles}>
+						<ExperienceImg />
+					</Box>
+				</Fade>
+				<Fade duration={2000} direction='right' cascade triggerOnce>
+					<Box sx={experienceHeadingStyles}>
+						<Typography variant='h2' sx={experienceHeadingTextStyles(theme)}>
+							{experience.title}
+						</Typography>
+						<Typography variant='h6' sx={experienceHeadingSubTextStyles(theme)}>
+							{experience.subtitle}
+						</Typography>
+						<Typography
+							variant='body1'
+							sx={experienceHeaderDetailTextStyles(theme)}
+						>
+							{experience.description}
+						</Typography>
+					</Box>
+				</Fade>
 			</Box>
 			<ExperienceAccordion>{experience.data}</ExperienceAccordion>
 		</Box>

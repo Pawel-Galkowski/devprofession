@@ -48,7 +48,7 @@ export interface HomePageProps {
 }
 
 export interface ExperienceProjectsDataProps {
-	description: string[];
+	descriptions: string[];
 	duration: string;
 	role: string;
 	technologies: string;
@@ -71,7 +71,7 @@ interface ExperienceDataWithoutProjects {
 	logo: JSX.Element;
 	duration: string;
 	location: string;
-	description: string[];
+	descriptions: string[];
 	technologies: string;
 }
 

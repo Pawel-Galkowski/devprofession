@@ -1,13 +1,13 @@
 import React from "react";
-import "./Educations.css";
 import DegreeCard from "../../components/degreeCard";
 import { degrees } from "../../data";
 import { Fade } from "react-awesome-reveal";
 import { useSelector } from "react-redux";
 import { ThemeEnum, themes } from "../../theme";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { DegreeProps, ObjectType } from "../../types";
 import { v4 as uuidv4 } from "uuid";
+import { educationsHeaderStyles, educationStyles } from "./styles";
 
 const Educations: React.FC = () => {
 	const themeState: ThemeEnum = useSelector(
@@ -16,11 +16,11 @@ const Educations: React.FC = () => {
 	const theme = themes[themeState];
 
 	return (
-		<Box sx={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+		<Box sx={educationStyles}>
 			<Fade duration={2000} direction='down' triggerOnce>
-				<h1 className='educations-header' style={{ color: theme.text }}>
+				<Typography variant="h2" sx={educationsHeaderStyles(theme)}>
 					Degrees Received
-				</h1>
+				</Typography>
 			</Fade>
 			{degrees.map((degree: DegreeProps) => (
 				<DegreeCard degree={degree} key={uuidv4()} />

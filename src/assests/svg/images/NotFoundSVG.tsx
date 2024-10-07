@@ -1,10 +1,10 @@
 import React from "react";
 import "./NotFound.css";
 import { useSelector } from "react-redux";
-import { ThemeEnum, themes } from "../../theme";
-import { ObjectType } from "../../types";
+import { ThemeEnum, themes } from "../../../theme";
+import { ObjectType } from "../../../types";
 
-export const NotFoundSVG: React.FC = () => {
+const NotFoundSVG: React.FC = () => {
 	const themeState: ThemeEnum = useSelector(
 		(state: ObjectType) => state.theme.value,
 	);
@@ -242,3 +242,5 @@ export const NotFoundSVG: React.FC = () => {
 		</svg>
 	);
 };
+
+export default NotFoundSVG

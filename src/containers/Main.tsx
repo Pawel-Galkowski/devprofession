@@ -10,15 +10,10 @@ import { Loader } from "../pages/loader";
 import { NotFound } from "../pages/notFound";
 import { ScrollTop } from "../components/scrollTopButton";
 import NewHeader from "../components/header/header";
-import { Box, Theme } from "@mui/material";
+import { Container } from "@mui/material";
 
-const mainContentStyles = (theme: Theme) => ({
-	padding: "1rem 5% 0",
-	maxWidth: "1500px",
-
-	[theme.breakpoints.down("md")]: {
-		padding: "1rem 1% 0",
-	},
+const mainContentStyles = () => ({
+	padding: "2rem 0 0",
 });
 
 const Main: React.FC = () => {
@@ -37,7 +32,7 @@ const Main: React.FC = () => {
 	) : (
 		<BrowserRouter>
 			<NewHeader />
-			<Box sx={mainContentStyles}>
+			<Container sx={mainContentStyles} maxWidth='lg'>
 				<Routes>
 					<Route path='/' element={<Home />} />
 					<Route path='/experience' element={<Experience />} />
@@ -47,7 +42,7 @@ const Main: React.FC = () => {
 					<Route path='*' element={<NotFound />} />
 				</Routes>
 				<ScrollTop />
-			</Box>
+			</Container>
 			<Footer />
 		</BrowserRouter>
 	);
