@@ -20,9 +20,9 @@ const Home: React.FC = () => {
 
 	return (
 		<Box>
-			<Fade duration={2000} direction='down'>
-				<Box className='greet-main'>
-					<Box className='greeting-text-div'>
+			<Box className='greet-main'>
+				<Box className='greeting-text-div'>
+					<Fade duration={2000} direction='left' triggerOnce>
 						<h1 className='greeting-text'>{homePage.title}</h1>
 						<p
 							className='greeting-text-p subTitle'
@@ -40,10 +40,12 @@ const Home: React.FC = () => {
 								<button style={contactButtonStyles(theme)}>Contact Me</button>
 							</Link>
 						</Box>
-					</Box>
-					<FeelingProudImg className='greeting-image-div' />
+					</Fade>
 				</Box>
-			</Fade>
+				<Fade duration={2000} direction='right' triggerOnce>
+					<FeelingProudImg className='greeting-image-div' />
+				</Fade>
+			</Box>
 			<Skills />
 		</Box>
 	);

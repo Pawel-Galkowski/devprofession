@@ -15,7 +15,7 @@ const Skills: React.FC = () => {
 	return (
 		<Box className='main' id='skills'>
 			<Box className='skills-header-Box'>
-				<Fade duration={2000} direction='down'>
+				<Fade duration={2000} direction='down' triggerOnce>
 					<h1 className='skills-header' style={{ color: theme.text }}>
 						Here&apos;s what I do
 					</h1>

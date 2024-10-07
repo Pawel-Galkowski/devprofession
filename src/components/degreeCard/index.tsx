@@ -20,10 +20,10 @@ const DegreeCard: React.FC<{ degree: DegreeProps }> = ({ degree }) => {
 
 	return (
 		<Box className='degree-card'>
-			<Flip direction='vertical' duration={2000}>
+			<Flip direction='vertical' duration={2000} triggerOnce>
 				<Box sx={imgStyles(theme)}>{degree.logo}</Box>
 			</Flip>
-			<Fade direction='right' duration={2000}>
+			<Fade direction='right' duration={2000} triggerOnce>
 				<Box sx={cardDegreeSectionStyles}>
 					<Box sx={bodyCardStyles(theme)}>
 						<Box

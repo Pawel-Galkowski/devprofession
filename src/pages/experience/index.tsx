@@ -18,11 +18,13 @@ const Experience: React.FC = () => {
 	return (
 		<Box className='experience-main'>
 			<Box className='basic-experience'>
-				<Fade duration={2000} direction='down'>
-					<Box className='experience-heading-div'>
+				<Box className='experience-heading-div'>
+					<Fade duration={2000} direction='left' cascade triggerOnce>
 						<Box className='experience-heading-img-div'>
 							<ExperienceImg />
 						</Box>
+					</Fade>
+					<Fade duration={2000} direction='right' cascade triggerOnce>
 						<Box className='experience-heading-text-div'>
 							<h1
 								className='experience-heading-text'
@@ -43,8 +45,8 @@ const Experience: React.FC = () => {
 								{experience.description}
 							</p>
 						</Box>
-					</Box>
-				</Fade>
+					</Fade>
+				</Box>
 			</Box>
 			<ExperienceAccordion>{experience.data}</ExperienceAccordion>
 		</Box>

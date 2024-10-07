@@ -14,11 +14,10 @@ import { Box, Theme } from "@mui/material";
 
 const mainContentStyles = (theme: Theme) => ({
 	padding: "1rem 5% 0",
-	width: "90%",
 	maxWidth: "1500px",
 
 	[theme.breakpoints.down("md")]: {
-		padding: "1rem 0 0",
+		padding: "1rem 1% 0",
 	},
 });
 

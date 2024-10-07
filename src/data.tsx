@@ -38,7 +38,7 @@ export const homePage: HomePageProps = {
 	full_name: "Pawel Galkowski",
 	subTitle:
 		"Full-Stack Developer, Javascript Enthusiast 🔥. Always open to new things.",
-	resumeLink: "link",
+	resumeLink: "https://devprofession.pl/Resume-Pawel-Galkowski-A.pdf",
 	mail: "mailto:mail@devprofession.pl",
 };
 

@@ -4,7 +4,7 @@ import "./ContactComponent.css";
 import { homePage, contactPageData, socialMediaLinks } from "../../data";
 import { useSelector } from "react-redux";
 import { ThemeEnum, themes } from "../../theme";
-import { Box, Button, Link as MuiLink } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { ObjectType } from "../../types";
 import { resumeButtonStyles } from "./styles";
 import { LinkedIn, Email } from "@mui/icons-material";
@@ -34,14 +34,14 @@ const Contact: React.FC = () => {
 						{contactPageData.description}
 					</p>
 					<Box className='social-media-div'>
-						<MuiLink
-							href={socialMediaLinks.linkedin}
+						<Link
+							to={socialMediaLinks.linkedin}
 							className='icon-button linkedin'
 							target='_blank'
 							rel='noopener noreferrer'
 						>
 							<LinkedIn className='linkedin' />
-						</MuiLink>
+						</Link>
 						<Link
 							to={`mailto:${socialMediaLinks.gmail}`}
 							className='icon-button google'
@@ -51,8 +51,8 @@ const Contact: React.FC = () => {
 							<Email />
 						</Link>
 					</Box>
-					<MuiLink href={homePage.resumeLink} download>
-						<Flip delay={1200} direction='vertical'>
+					<Flip delay={1200} direction='vertical' triggerOnce>
+						<Link to={homePage.resumeLink} target='_blank'>
 							<Button
 								sx={resumeButtonStyles(theme)}
 								size='large'
@@ -60,8 +60,8 @@ const Contact: React.FC = () => {
 							>
 								Check my resume
 							</Button>
-						</Flip>
-					</MuiLink>
+						</Link>
+					</Flip>
 				</Box>
 			</Fade>
 		</Box>

@@ -26,7 +26,7 @@ const ExperienceAccordion: React.FC<{ children: ExperienceDataProps[] }> = ({
 				<Accordion
 					key={uuidv4()}
 					sx={accordionStyles(theme)}
-					defaultExpanded={index === 0 ? true : false}
+					defaultExpanded={index === 0}
 				>
 					<AccordionSummary>
 						<Box sx={{ paddingLeft: "0.5rem" }}>{data.title}</Box>

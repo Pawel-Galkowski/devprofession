@@ -17,9 +17,11 @@ const Education: React.FC = () => {
 
 	return (
 		<Box className='basic-education'>
-			<Fade duration={2000} direction='down'>
-				<Box className='heading-div'>
+			<Box className='heading-div'>
+				<Fade duration={2000} direction='left' triggerOnce>
 					<EducationImg />
+				</Fade>
+				<Fade duration={2000} direction='right' triggerOnce>
 					<Box className='heading-text-div'>
 						<h1 className='heading-text' style={{ color: theme.text }}>
 							Education
@@ -35,8 +37,8 @@ const Education: React.FC = () => {
 							Below are some of my certifications.
 						</p>
 					</Box>
-				</Box>
-			</Fade>
+				</Fade>
+			</Box>
 			<Educations />
 			<Certifications />
 		</Box>

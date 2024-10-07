@@ -1,5 +1,4 @@
 import React from "react";
-import { Fade } from "react-awesome-reveal";
 import { homePage } from "../../data";
 import { useSelector } from "react-redux";
 import { ThemeEnum, themes } from "../../theme";
@@ -13,12 +12,10 @@ const Footer: React.FC = () => {
 	);
 	const theme = themes[themeState];
 	return (
-		<Fade direction='up'>
-			<p style={{ ...footerTextStyles(theme) }}>
-				Made with <FavoriteIcon sx={{ fill: "#FF0000", fontSize: "1.3rem" }} />{" "}
-				by {homePage.footer_information}
-			</p>
-		</Fade>
+		<p style={{ ...footerTextStyles(theme) }}>
+			Made with <FavoriteIcon sx={{ fill: "#FF0000", fontSize: "1.3rem" }} /> by{" "}
+			{homePage.footer_information}
+		</p>
 	);
 };
 

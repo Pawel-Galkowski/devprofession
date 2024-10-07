@@ -3,7 +3,7 @@
 	text-align: center;
 	display: flex;
 	flex-direction: column;
-	gap: 5rem;
+	gap: 8rem;
 }
 
 .projects-box-description {
@@ -82,7 +82,7 @@
 
 @media (max-width: 768px) {
 	.projects-main {
-		gap: 1rem;
+		gap: 2rem;
 	}
 
 	.projects-heading-text {

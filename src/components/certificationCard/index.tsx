@@ -17,14 +17,13 @@ import { Send } from "@mui/icons-material";
 
 const CertificationCard: React.FC<{
 	certificate: CertificationProps;
-	index: number;
-}> = ({ certificate, index }) => {
+}> = ({ certificate }) => {
 	const themeState: ThemeEnum = useSelector(
 		(state: ObjectType) => state.theme.value,
 	);
 
 	return (
-		<Fade duration={2000} delay={index * 200} direction='up'>
+		<Fade duration={2000} direction='up' cascade triggerOnce>
 			<Card sx={cardStyles(themeState)}>
 				<Box sx={imageStyles}>{certificate.logo}</Box>
 				<CardContent>

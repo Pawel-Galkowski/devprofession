@@ -17,7 +17,7 @@ const Educations: React.FC = () => {
 
 	return (
 		<Box sx={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-			<Fade duration={2000} direction='down'>
+			<Fade duration={2000} direction='down' triggerOnce>
 				<h1 className='educations-header' style={{ color: theme.text }}>
 					Degrees Received
 				</h1>

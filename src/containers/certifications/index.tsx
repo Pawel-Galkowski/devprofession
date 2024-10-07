@@ -25,15 +25,15 @@ const Certifications: React.FC = () => {
 			}}
 		>
 			<Box className='certs-header-div'>
-				<Fade duration={2000} direction='down'>
+				<Fade duration={2000} direction='down' triggerOnce>
 					<h1 className='certs-header' style={{ color: theme.text }}>
 						Certifications
 					</h1>
 				</Fade>
 			</Box>
 			<Box className='certs-body-div'>
-				{certifications.map((cert: CertificationProps, index) => (
-					<CertificationCard certificate={cert} key={uuidv4()} index={index} />
+				{certifications.map((cert: CertificationProps) => (
+					<CertificationCard certificate={cert} key={uuidv4()} />
 				))}
 			</Box>
 		</Box>

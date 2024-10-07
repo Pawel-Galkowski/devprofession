@@ -19,20 +19,20 @@ const SkillSection: React.FC = () => {
 			{skills.map((item: SkillsProps, index) =>
 				index % 2 === 0 ? (
 					<Box className='skills-main-div' key={uuidv4()}>
-						<Fade duration={2000} direction='left'>
+						<Fade duration={2000} direction='left' triggerOnce>
 							<Box className='skills-image-div'>{item.image}</Box>
 						</Fade>
 
 						<Box className='skills-text-div'>
-							<Fade duration={1000} direction='right'>
+							<Fade cascade direction='right' triggerOnce>
 								<h1 className='skills-heading' style={{ color: theme.text }}>
 									{item.title}
 								</h1>
 							</Fade>
-							<Fade duration={1500} direction='right'>
+							<Fade cascade direction='right' triggerOnce>
 								<SoftwareSkill skills={item.softwareSkills} />
 							</Fade>
-							<Fade duration={2000} direction='right'>
+							<Fade cascade direction='right' triggerOnce>
 								<ul className='custom-list-style'>
 									{item.descriptions.map((skillSentence: string) => (
 										<li
@@ -50,15 +50,15 @@ const SkillSection: React.FC = () => {
 				) : (
 					<Box className='skills-main-div-second' key={uuidv4()}>
 						<Box className='skills-text-div'>
-							<Fade duration={1000} direction='left'>
+							<Fade cascade direction='left' triggerOnce>
 								<h1 className='skills-heading' style={{ color: theme.text }}>
 									{item.title}
 								</h1>
 							</Fade>
-							<Fade duration={1500} direction='left'>
+							<Fade cascade direction='left' triggerOnce>
 								<SoftwareSkill skills={item.softwareSkills} />
 							</Fade>
-							<Fade duration={2000} direction='left'>
+							<Fade cascade direction='left' triggerOnce>
 								<ul className='custom-list-style'>
 									{item.descriptions.map((skillSentence: string) => (
 										<li
@@ -72,7 +72,7 @@ const SkillSection: React.FC = () => {
 								</ul>
 							</Fade>
 						</Box>
-						<Fade duration={2000} direction='right'>
+						<Fade duration={2000} cascade direction='right' triggerOnce>
 							<Box className='skills-image-div'>{item.image}</Box>
 						</Fade>
 					</Box>

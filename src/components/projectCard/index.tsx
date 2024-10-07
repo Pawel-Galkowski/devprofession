@@ -23,7 +23,7 @@ const ProjectCard: React.FC<{ repo: ProjectsProps }> = ({ repo }) => {
 
 	const theme = themes[themeState];
 	return (
-		<Fade direction='down' duration={2000}>
+		<Fade direction='down' duration={2000} triggerOnce>
 			<Box sx={projectCardStyle(theme)} key={uuidv4()}>
 				<Box className='repo-name-div'>
 					<p className='repo-name' style={{ color: theme.text }}>

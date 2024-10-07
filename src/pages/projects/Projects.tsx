@@ -18,11 +18,13 @@ const Projects: React.FC = () => {
 
 	return (
 		<Box className='projects-main'>
-			<Fade duration={2000} direction='down'>
-				<Box className='projects-heading-div'>
+			<Box className='projects-heading-div'>
+				<Fade duration={2000} direction='left' cascade triggerOnce>
 					<Box className='projects-heading-img-div'>
 						<ProjectsImg />
 					</Box>
+				</Fade>
+				<Fade duration={2000} direction='right' cascade triggerOnce>
 					<Box className='projects-heading-text-div'>
 						<h1 className='projects-heading-text' style={{ color: theme.text }}>
 							{projectsHeader.title}
@@ -34,8 +36,8 @@ const Projects: React.FC = () => {
 							{projectsHeader.description}
 						</p>
 					</Box>
-				</Box>
-			</Fade>
+				</Fade>
+			</Box>
 			<Box className='projects-box-description'>
 				<Box className='repo-cards-div-main'>
 					{projects.map((repo: ProjectsProps) => (
