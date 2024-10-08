@@ -4,7 +4,6 @@ import { LocalTheme } from "../../theme";
 export const contactButtonStyles = (theme: LocalTheme) => ({
 	backgroundColor: `${theme.accentBright}`,
 	fontWeight: "bold",
-	fontFamily: "Google Sans Regular",
 });
 
 export const homePageStyles: SxProps<Theme> = (theme) => ({
@@ -29,8 +28,6 @@ export const homePageHeaderStyles: SxProps<Theme> = (theme) => ({
 });
 
 export const greetingHeadingStyles: SxProps<Theme> = (theme) => ({
-	fontFamily: "Google Sans Bold",
-
 	[theme.breakpoints.down("md")]: {
 		textAlign: "center",
 	},
@@ -39,7 +36,6 @@ export const greetingHeadingStyles: SxProps<Theme> = (theme) => ({
 export const greetingTextStyles =
 	(localTheme: LocalTheme): SxProps<Theme> =>
 	(theme) => ({
-		fontFamily: "Google Sans Medium",
 		color: localTheme.secondaryText,
 		maxWidth: "90%",
 
@@ -63,11 +59,15 @@ export const greetingImageStyles: SxProps<Theme> = (theme) => ({
 	},
 });
 
-export const informationBoxStyles: SxProps = () => ({
+export const informationBoxStyles: SxProps<Theme> = (theme) => ({
 	display: "flex",
 	flexDirection: "column",
-	alignItems: "flexStart",
+	alignItems: "flex-start",
 	gap: "0.3rem",
+
+	[theme.breakpoints.down("md")]: {
+		alignItems: "center"
+	},
 });
 
 export const contactButtonBoxStyles: SxProps<Theme> = (theme) => ({

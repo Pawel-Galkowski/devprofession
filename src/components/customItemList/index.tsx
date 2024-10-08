@@ -8,6 +8,7 @@ import {
 	itemListStyles,
 	itemListIconStyles,
 	itemListTextStyles,
+	customListStyles,
 } from "./styles";
 
 interface CustomItemListProps {
@@ -20,7 +21,7 @@ const CustomItemList: React.FC<{ item: CustomItemListProps }> = ({ item }) => {
 	);
 	const theme = themes[themeState];
 	return (
-		<List>
+		<List sx={customListStyles}>
 			{item.descriptions.map((skillSentence: string) => (
 				<ListItem
 					style={itemListStyles(theme)}

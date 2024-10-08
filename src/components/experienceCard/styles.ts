@@ -1,10 +1,9 @@
-import { SxProps, Theme } from "@mui/material";
+import { SxProps, Theme, typographyClasses } from "@mui/material";
 import { LocalTheme } from "../../theme";
 
 export const experienceCardLocationStyles =
 	(localTheme: LocalTheme): SxProps<Theme> =>
 	(theme: Theme) => ({
-		fontFamily: "Google Sans Regular",
 		margin: "0.5rem 0 0 0",
 		textAlign: "right",
 		color: localTheme.secondaryText,
@@ -16,10 +15,8 @@ export const experienceCardLocationStyles =
 
 export const experienceCardDurationStyles =
 	(localTheme: LocalTheme) => (theme: Theme) => ({
-		fontFamily: "Google Sans Regular",
 		textAlign: "right",
 		color: localTheme.secondaryText,
-		paddingRight: "0.5rem",
 		display: "flex",
 		flexDirection: "column",
 
@@ -28,13 +25,18 @@ export const experienceCardDurationStyles =
 		},
 	});
 
-export const experienceCardDescriptionStyles = (localTheme: LocalTheme) => ({
-	paddingRight: "0.5rem",
-	fontFamily: "Google Sans Regular",
-	display: "flex",
-	color: localTheme.text,
-	flexDirection: "column",
-});
+export const experienceCardDescriptionStyles =
+	(localTheme: LocalTheme) => (theme: Theme) => ({
+		marginRight: "2rem",
+		paddingBottom: "0.3rem",
+		display: "flex",
+		color: localTheme.text,
+		flexDirection: "column",
+
+		[theme.breakpoints.down("md")]: {
+			marginRight: 0,
+		},
+	});
 
 export const experienceCardStyles =
 	(localTheme: LocalTheme): SxProps<Theme> =>
@@ -82,16 +84,32 @@ export const experienceCardHeaderStyles = (theme: Theme) => ({
 	paddingBottom: "0.3rem",
 	marginRight: "2rem",
 	borderBottom: "1px solid red",
+	alignItems: "flex-start",
+	justifyContent: "space-between",
 
 	[theme.breakpoints.down("md")]: {
 		flexDirection: "column",
+		justifyContent: "center",
+		margin: 0,
+		width: "100%",
+		[`& .${typographyClasses.root}`]: {
+			textAlign: 'center'
+		},
 	},
 });
 
-export const experienceCardInsideHeaderStyles = () => ({
+export const experienceCardInsideHeaderStyles: SxProps<Theme> = (theme) => ({
 	display: "flex",
 	flexDirection: "row",
 	alignItems: "center",
+
+	[theme.breakpoints.down("md")]: {
+		flexDirection: "column",
+		justifyContent: "center",
+		[`& .${typographyClasses.root}`]: {
+			textAlign: 'center'
+		},
+	},
 });
 
 export const technologiesSectionStyles = () => ({
@@ -104,24 +122,20 @@ export const experienceCardLogoStyles = () => ({
 
 export const experienceCardTitleStyles =
 	(localTheme: LocalTheme) => (theme: Theme) => ({
-		fontFamily: "Google Sans Regular",
-		marginTop: "10px",
-		marginBottom: "2px",
-		marginLeft: "0px",
-		marginRight: "7px",
+		margin: "10px 7px 2px 0",
 		textAlign: "left",
 		color: localTheme.text,
 
 		[theme.breakpoints.down("md")]: {
 			textAlign: "center",
+			margin: 0
 		},
 	});
 
 export const experienceCardCompanyStyles = (localTheme: LocalTheme) => ({
-	fontFamily: "Google Sans Regular",
 	margin: 0,
 	textAlign: "left",
-	localTheme: localTheme.text, //theme.secondaryText
+	color: localTheme.text, //theme.secondaryText
 
 	"& > a": {
 		position: "relative",
@@ -149,16 +163,16 @@ export const experienceCardCompanyStyles = (localTheme: LocalTheme) => ({
 	},
 });
 
-export const experienceCardHeadingLeftStyles = () => ({
-	float: "left",
-	marginLeft: "10px",
-	marginRight: "auto",
+export const experienceCardHeadingLeftStyles: SxProps<Theme> = (theme) => ({
+	marginLeft: "0.8rem",
+	[theme.breakpoints.down("md")]: {
+		width: '100%',
+		marginLeft: 0,
+		textAlign: "center",
+	},
 });
 
-export const experienceCardHeadingRightStyles = (theme: Theme) => ({
-	float: "right",
-	marginLeft: "auto",
-	marginRight: "0.7rem",
+export const experienceCardHeadingRightStyles: SxProps<Theme> = (theme) => ({
 	"&:has(.experience-card-location)": {
 		marginRight: 0,
 	},
@@ -167,5 +181,10 @@ export const experienceCardHeadingRightStyles = (theme: Theme) => ({
 		display: "flex",
 		alignItems: "center",
 		justifyContent: "center",
+		width: '100%',
+		marginLeft: 0,
+		[`& .${typographyClasses.root}`]: {
+			margin: 0,
+		},
 	},
 });

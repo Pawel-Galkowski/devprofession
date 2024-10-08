@@ -15,7 +15,7 @@ const Skills: React.FC = () => {
 	return (
 		<Box sx={mainSkillsStyles}>
 			<Fade duration={2000} direction='down' triggerOnce>
-				<Typography sx={skillsHeaderStyles(theme)} variant="h1">
+				<Typography sx={skillsHeaderStyles(theme)} variant="h2">
 					Here&apos;s what I do
 				</Typography>
 			</Fade>

@@ -1,40 +1,25 @@
 import { SxProps, Theme } from "@mui/material";
 import { LocalTheme } from "../../theme";
 
-export const skillsLeftImgSectionStyles: SxProps<Theme> = (theme) => ({
-	display: "flex",
-	gap: "4rem",
-	alignItems: "center",
-	flexDirection: "row",
+export const skillsImgSectionStyles =
+	(leftAlign: boolean): SxProps<Theme> =>
+	(theme) => ({
+		display: "flex",
+		gap: "4rem",
+		alignItems: "center",
+		flexDirection: leftAlign ? "row" : "row-reverse",
 
-	"& > *": {
-		flex: 1,
-	},
+		"& > *": {
+			flex: 1,
+		},
 
-	[theme.breakpoints.down("md")]: {
-		flexDirection: "column",
-		gap: "1rem",
-	},
-});
-
-export const skillsRightImgSectionStyles: SxProps<Theme> = (theme) => ({
-	display: "flex",
-	gap: "4rem",
-	alignItems: "center",
-	flexDirection: "row",
-
-	"& > *": {
-		flex: 1,
-	},
-
-	[theme.breakpoints.down("lg")]: {
-		flexDirection: "column",
-		gap: "1rem",
-	},
-});
+		[theme.breakpoints.down("lg")]: {
+			flexDirection: "column",
+			gap: "1rem",
+		},
+	});
 
 export const skillsHeaderStyles = (localTheme: LocalTheme) => ({
-	fontFamily: "Google Sans Regular",
 	textAlign: "center",
 	color: localTheme.text,
 });
@@ -51,7 +36,6 @@ export const skillsTwoLayersLayoutStyles: SxProps<Theme> = (theme) => ({
 
 export const skillsTextStyles: SxProps<Theme> = (theme) => ({
 	marginTop: "3%",
-	fontFamily: "Google Sans Regular",
 
 	[theme.breakpoints.down("lg")]: {
 		marginTop: 0,
@@ -72,7 +56,7 @@ export const skillsHeadingStyles =
 	(localTheme: LocalTheme): SxProps<Theme> =>
 	(theme) => ({
 		textAlign: "left",
-		fontFamily: "Google Sans Regular",
+		marginLeft: '0.4rem',
 		color: localTheme.text,
 
 		[theme.breakpoints.down("md")]: {
@@ -85,6 +69,7 @@ export const softwareSkillStyles: SxProps<Theme> = (theme) => ({
 	flexDirection: "row",
 	alignItems: "flex-start",
 	justifyContent: "flex-start",
+	marginLeft: '0.4rem',
 	gap: "0.5rem",
 
 	"& li": {

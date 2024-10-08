@@ -11,27 +11,11 @@ const ProjectsImg = () => {
 
 	return (
 		<svg
-			id='a6dc9487-50e2-4fb9-af91-bf1b7118d463'
 			data-name='Layer 1'
-			width='1103.79'
-			height='707.8'
+			width='100%'
+			height='100%'
 			viewBox='0 0 1103.79 707.8'
 		>
-			<defs>
-				<linearGradient
-					id='bd43dd7f-2dfd-4389-bf1e-697a1c0f972b'
-					x1='891.82'
-					y1='790.72'
-					x2='891.82'
-					y2='522.9'
-					gradientUnits='userSpaceOnUse'
-				>
-					<stop offset='0' stopColor='gray' stopOpacity='0.25' />
-					<stop offset='0.54' stopColor='gray' stopOpacity='0.12' />
-					<stop offset='1' stopColor='gray' stopOpacity='0.1' />
-				</linearGradient>
-			</defs>
-			<title></title>
 			<ellipse
 				cx='843.39'
 				cy='664.8'
@@ -44,7 +28,7 @@ const ProjectsImg = () => {
 				<path
 					d='M673.12,122.89c0,156.1,97.93,282.41,219,282.41'
 					transform='translate(-48.1 -96.1)'
-					fill={theme.accentColor}
+					fill={theme.darkNumberColor}
 				/>
 			</g>
 			<path
@@ -72,7 +56,7 @@ const ProjectsImg = () => {
 				width='70.01'
 				height='33.22'
 				rx='8.57'
-				fill={theme.accentColor}
+				fill={theme.numberColor}
 				opacity='0.2'
 			/>
 			<rect
@@ -81,7 +65,7 @@ const ProjectsImg = () => {
 				width='70.01'
 				height='33.22'
 				rx='8.57'
-				fill={theme.accentColor}
+				fill={theme.numberColor}
 				opacity='0.2'
 			/>
 			<polyline
@@ -104,7 +88,7 @@ const ProjectsImg = () => {
 				width='102.68'
 				height='48.73'
 				rx='8.57'
-				fill={theme.accentColor}
+				fill={theme.numberColor}
 			/>
 			<line
 				x1='492.29'
@@ -127,7 +111,7 @@ const ProjectsImg = () => {
 				width='70.01'
 				height='33.22'
 				rx='8.57'
-				fill={theme.accentColor}
+				fill={theme.numberColor}
 				opacity='0.2'
 			/>
 			<rect
@@ -136,7 +120,7 @@ const ProjectsImg = () => {
 				width='70.01'
 				height='33.22'
 				rx='8.57'
-				fill={theme.accentColor}
+				fill={theme.numberColor}
 				opacity='0.2'
 			/>
 			<rect
@@ -145,7 +129,7 @@ const ProjectsImg = () => {
 				width='70.01'
 				height='33.22'
 				rx='8.57'
-				fill={theme.accentColor}
+				fill={theme.numberColor}
 				opacity='0.2'
 			/>
 			<line
@@ -176,7 +160,7 @@ const ProjectsImg = () => {
 				width='70.01'
 				height='33.22'
 				rx='8.57'
-				fill={theme.accentColor}
+				fill={theme.numberColor}
 				opacity='0.2'
 			/>
 			<rect
@@ -186,7 +170,7 @@ const ProjectsImg = () => {
 				height='33.22'
 				rx='8.57'
 				transform='translate(1210.51 -631.25) rotate(90)'
-				fill={theme.accentColor}
+				fill={theme.numberColor}
 				opacity='0.2'
 			/>
 			<rect
@@ -196,7 +180,7 @@ const ProjectsImg = () => {
 				height='33.22'
 				rx='8.57'
 				transform='translate(377.41 1272.15) rotate(-90)'
-				fill={theme.accentColor}
+				fill={theme.numberColor}
 				opacity='0.2'
 			/>
 			<rect
@@ -205,7 +189,7 @@ const ProjectsImg = () => {
 				width='70.01'
 				height='33.22'
 				rx='8.57'
-				fill={theme.accentColor}
+				fill={theme.numberColor}
 				opacity='0.2'
 			/>
 			<rect
@@ -215,7 +199,7 @@ const ProjectsImg = () => {
 				height='33.22'
 				rx='8.57'
 				transform='translate(972.95 1114.65) rotate(-180)'
-				fill={theme.accentColor}
+				fill={theme.numberColor}
 				opacity='0.2'
 			/>
 			<rect
@@ -225,7 +209,7 @@ const ProjectsImg = () => {
 				height='33.22'
 				rx='8.57'
 				transform='translate(1174.83 1114.65) rotate(-180)'
-				fill={theme.accentColor}
+				fill={theme.numberColor}
 				opacity='0.2'
 			/>
 			<line
@@ -271,7 +255,7 @@ const ProjectsImg = () => {
 				height='33.22'
 				rx='8.57'
 				transform='translate(1134.8 -447.65) rotate(90)'
-				fill={theme.accentColor}
+				fill={theme.numberColor}
 				opacity='0.2'
 			/>
 			<rect
@@ -281,7 +265,7 @@ const ProjectsImg = () => {
 				height='33.22'
 				rx='8.57'
 				transform='translate(1200.94 -512.04) rotate(90)'
-				fill={theme.accentColor}
+				fill={theme.numberColor}
 				opacity='0.2'
 			/>
 			<rect
@@ -291,7 +275,7 @@ const ProjectsImg = () => {
 				height='33.22'
 				rx='8.57'
 				transform='translate(636.73 -57.48) rotate(90)'
-				fill={theme.accentColor}
+				fill={theme.numberColor}
 				opacity='0.2'
 			/>
 			<rect
@@ -301,7 +285,7 @@ const ProjectsImg = () => {
 				height='33.22'
 				rx='8.57'
 				transform='translate(-196.37 698.37) rotate(-90)'
-				fill={theme.accentColor}
+				fill={theme.numberColor}
 				opacity='0.2'
 			/>
 			<line
@@ -347,7 +331,7 @@ const ProjectsImg = () => {
 				height='33.22'
 				rx='8.57'
 				transform='translate(820.34 -133.18) rotate(90)'
-				fill={theme.accentColor}
+				fill={theme.darkNumberColor}
 				opacity='0.2'
 			/>
 			<rect
@@ -357,7 +341,7 @@ const ProjectsImg = () => {
 				height='33.22'
 				rx='8.57'
 				transform='translate(755.94 -67.05) rotate(90)'
-				fill={theme.accentColor}
+				fill={theme.darkNumberColor}
 				opacity='0.2'
 			/>
 			<path
@@ -368,12 +352,12 @@ const ProjectsImg = () => {
 			<path
 				d='M226.59,688.89c0-50.81,35.18-91.92,78.65-91.92'
 				transform='translate(-48.1 -96.1)'
-				fill={theme.accentColor}
+				fill={theme.darkNumberColor}
 			/>
 			<path
 				d='M181.66,602.55c0,47.72,20.1,86.34,44.93,86.34'
 				transform='translate(-48.1 -96.1)'
-				fill={theme.accentColor}
+				fill={theme.darkNumberColor}
 			/>
 			<path
 				d='M226.59,688.89c0-64.92,40.66-117.45,90.9-117.45'

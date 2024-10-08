@@ -10,15 +10,7 @@ const ExperienceImg: React.FC = () => {
 	const theme = themes[themeState];
 
 	return (
-		<svg
-			id='bf56719a-dd30-4b09-833f-7c41eeee086b'
-			data-name='Layer 1'
-			xmlns='http://www.w3.org/2000/svg'
-			width='1094'
-			height='760'
-			viewBox='0 0 1094 760'
-		>
-			<title></title>
+		<svg data-name='Layer 1' width='100%' height='100%' viewBox='0 0 1094 760'>
 			<rect
 				x='155'
 				y='304.52'

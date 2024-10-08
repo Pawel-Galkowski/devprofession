@@ -58,7 +58,10 @@ const MobileMenu: React.FC = () => {
 				sx={mobileMenuModalStyles}
 			>
 				<Box sx={overlayMenuStyles}>
-					<IconButton onClick={handleCloseNavMenu} sx={mobileMenuExitIconStyles}>
+					<IconButton
+						onClick={handleCloseNavMenu}
+						sx={mobileMenuExitIconStyles}
+					>
 						<Close htmlColor='#fff' />
 					</IconButton>
 					<Link to='/' style={menuMobileLinkItemStyles(theme)}>

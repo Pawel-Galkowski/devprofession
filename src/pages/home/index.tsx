@@ -34,7 +34,6 @@ const Home: React.FC = () => {
 						<Typography sx={greetingHeadingStyles} variant='h2'>
 							{homePage.title}
 						</Typography>
-
 						<Typography variant='h5' sx={greetingTextStyles(theme)}>
 							I&apos;m{" "}
 							<span style={{ color: theme.accentColor }}>

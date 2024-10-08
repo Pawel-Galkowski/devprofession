@@ -5,8 +5,6 @@ export const headerStyles = () => ({
 	background: "transparent",
 	boxShadow: "none",
 	display: "block",
-	padding: "20px 10px",
-	margin: "0 auto",
 });
 
 export const headerLayoutStyles = (theme: Theme) => ({
@@ -42,7 +40,6 @@ export const logoStyles = (localTheme: LocalTheme) => (theme: Theme) => ({
 	mr: 2,
 	color: localTheme.text,
 	textDecoration: "none",
-	fontFamily: "Google Sans Regular",
 	fontWeight: "bold",
 	[theme.breakpoints.down("sm")]: {
 		fontSize: "1.5rem",
@@ -86,18 +83,15 @@ export const menuItemStyles = () => ({
 });
 
 export const menuLinkItemStyles = (theme: LocalTheme) => ({
-	fontFamily: "Google Sans Regular",
 	color: theme.text,
 	display: "block",
-	padding: "10px 20px",
+	padding: "0.8rem 1.6rem",
 	textDecoration: "none",
 });
 
 export const menuMobileLinkItemStyles = (theme: LocalTheme) => ({
-	fontFamily: "Google Sans Regular",
 	color: "#fff",
 	display: "block",
-	padding: "10px 20px",
 	textDecoration: "none",
 });
 

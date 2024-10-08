@@ -28,7 +28,7 @@ const ProjectCard: React.FC<{ repo: ProjectsProps }> = ({ repo }) => {
 	return (
 		<Fade direction='down' duration={2000} triggerOnce>
 			<Box sx={projectCardStyles(theme)} key={uuidv4()}>
-				<Box className='repo-name-div'>
+				<Box>
 					<Typography variant='h4' sx={repositoryNameStyles(theme)}>
 						{repo.name}
 					</Typography>

@@ -38,7 +38,7 @@ const ExperienceCard: React.FC<{ children: ExperienceDataProps }> = ({
 			<Box sx={experienceCardBodyStyles}>
 				<Box sx={experienceCardHeaderStyles}>
 					<Box sx={experienceCardHeadingLeftStyles}>
-						<Typography variant='h4' sx={experienceCardTitleStyles(theme)}>
+						<Typography variant='h5' sx={experienceCardTitleStyles(theme)}>
 							{children.title}
 						</Typography>
 						<Typography variant='body1' sx={experienceCardCompanyStyles(theme)}>

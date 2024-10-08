@@ -35,30 +35,19 @@ export const bodyCardStyles = (localTheme: LocalTheme) => (theme: Theme) => ({
 });
 
 export const visitButtonStyles = (theme: LocalTheme) => ({
-	textDecoration: "none",
-	color: "rgba(255, 255, 255, 1)",
-	padding: "15px 15px",
-	borderRadius: "4px",
-	width: "200px",
-	height: "50px",
+	backgroundColor: `${theme.accentBright}`,
 	fontWeight: "bold",
-	fontFamily: "Google Sans Regular",
-	transition: "all 0.2s ease-in-out",
-	cursor: "pointer",
-	border: `1px solid ${theme.accentColor}`,
-	float: "right",
-	backgroundColor: theme.accentColor,
-	"&:hover": {
-		color: "rgba(255, 255, 255, 1)",
-		boxShadow: `0px 2px 12px ${theme.accentColor}`,
-	},
 });
 
-export const cardDegreeSectionStyles = () => ({
+export const cardDegreeSectionStyles: SxProps<Theme> = (theme) => ({
 	display: "flex",
 	flexDirection: "column",
 	gap: "1rem",
 	maxWidth: "700px",
+
+	[theme.breakpoints.down("sm")]: {
+		alignItems: "center",
+	},
 });
 
 export const degreeCardStyles: SxProps<Theme> = (theme) => ({
@@ -75,16 +64,20 @@ export const degreeCardStyles: SxProps<Theme> = (theme) => ({
 });
 
 export const cardTitleStyles: SxProps<Theme> = (theme) => ({
-	fontFamily: "Google Sans Medium",
-	marginLeft: "10px",
 	color: "#ffffff",
 	flexDirection: "row",
+	[theme.breakpoints.down("md")]: {
+		textAlign: "center",
+	},
 });
 
 export const cardSubtitleStyles: SxProps<Theme> = (theme) => ({
-	fontFamily: "Google Sans Medium",
 	color: "#ffffff",
-	textAlign: "center",
+	textAlign: "left",
+
+	[theme.breakpoints.down("md")]: {
+		textAlign: "center",
+	},
 });
 
 export const bodyHeaderStyles =
@@ -113,8 +106,6 @@ export const bodyHeaderTitleStyles: SxProps<Theme> = (theme) => ({
 });
 
 export const durationDesktopStyles: SxProps<Theme> = (theme) => ({
-	fontGamily: "Google Sans Regular",
-	paddingRight: "10px",
 	color: "#ffffff",
 	[theme.breakpoints.down("md")]: {
 		display: "none",
@@ -122,7 +113,6 @@ export const durationDesktopStyles: SxProps<Theme> = (theme) => ({
 });
 
 export const durationMobileStyles: SxProps<Theme> = (theme) => ({
-	fontGamily: "Google Sans Regular",
 	color: "#ffffff",
 	display: "none",
 	textAlign: "center",

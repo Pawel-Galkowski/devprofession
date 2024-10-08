@@ -17,9 +17,7 @@ export const projectCardStyles = (theme: LocalTheme) => ({
 	},
 });
 
-export const projectInformationSectionStyles = (
-	theme: LocalTheme,
-) => ({
+export const projectInformationSectionStyles = (theme: LocalTheme) => ({
 	display: "flex",
 	alignItem: "flex-start",
 	flexDirection: "column",
@@ -44,21 +42,26 @@ export const actionButonsSectionStyles = (theme: Theme) => ({
 });
 
 export const repositoryNameStyles = (localTheme: LocalTheme) => ({
-	whiteSpace: "nowrap",
 	textOverflow: "ellipsis",
-	fontFamily: "Google Sans Regular",
-	color: localTheme.text
+	color: localTheme.text,
 });
 
-export const repositoryDescriptionStyles = (localTheme: LocalTheme) => ({
-	wordWrap: "break-word",
-	textAlign: "left",
-	display: "-webkit-box",
-	fontFamily: "Google Sans Regular",
-	color: localTheme.text,
-	lineClamp: 4,
-	boxOrient: "vertical",
-});
+export const repositoryDescriptionStyles =
+	(localTheme: LocalTheme) => (theme: Theme) => ({
+		wordWrap: "break-word",
+		textAlign: "left",
+		display: "-webkit-box",
+		color: localTheme.text,
+		WebkitBoxOrient: "vertical",
+		WebkitLineClamp: 5,
+		overflow: "hidden",
+		textOverflow: "ellipsis",
+
+		[theme.breakpoints.down("md")]: {
+			textAlign: "justify",
+			WebkitLineClamp: 7,
+		},
+	});
 
 export const languagesIconsStyles = () => ({
 	listStyles: "none",

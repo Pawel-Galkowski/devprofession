@@ -83,8 +83,13 @@ export interface ExperienceProps {
 	title: string;
 	subtitle: string;
 	description: string;
-	header_image_path: string;
 	data: ExperienceDataProps[];
+}
+
+export interface EducationProps {
+	title: string;
+	subtitle: string;
+	description: string;
 }
 
 export interface ProjectsHeaderProps {

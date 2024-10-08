@@ -2,7 +2,7 @@ import React from "react";
 import { Fade, Flip } from "react-awesome-reveal";
 import { useSelector } from "react-redux";
 import { ThemeEnum, themes } from "../../theme";
-import { Box, Link, Typography } from "@mui/material";
+import { Box, Button, Link, Typography } from "@mui/material";
 import { DegreeProps, ObjectType } from "../../types";
 import {
 	visitButtonStyles,
@@ -58,9 +58,13 @@ const DegreeCard: React.FC<{ degree: DegreeProps }> = ({ degree }) => {
 						rel='noopener noreferrer'
 						sx={buttonLinkStyles}
 					>
-						<Typography sx={visitButtonStyles(theme)} variant='body2'>
+						<Button
+							sx={visitButtonStyles(theme)}
+							size='large'
+							variant='contained'
+						>
 							Visit Website
-						</Typography>
+						</Button>
 					</Link>
 				</Box>
 			</Fade>

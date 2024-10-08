@@ -10,7 +10,6 @@ export const educationStyles = () => ({
 export const educationsHeaderStyles =
 	(localTheme: LocalTheme): SxProps<Theme> =>
 	(theme) => ({
-		fontFamily: "Google Sans Regular",
 		textAlign: "center",
 		color: localTheme.text,
 

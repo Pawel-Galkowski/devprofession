@@ -2,6 +2,7 @@ import {
 	CertificationProps,
 	ContactPageDataProps,
 	DegreeProps,
+	EducationProps,
 	ExperienceProps,
 	HomePageProps,
 	ProjectsHeaderProps,
@@ -30,7 +31,7 @@ import {
 import { BackEndImg, FrontEndImg } from "./assests/svg/images";
 
 export const homePage: HomePageProps = {
-	title: "Hello 👋.",
+	title: "Hello 👋",
 	footer_information: "Pawel Galkowski",
 	logo_name: "DevProfession",
 	nickname: "Pawel",
@@ -137,7 +138,6 @@ export const experience: ExperienceProps = {
 	subtitle: "Work information list",
 	description:
 		"As a Full-Stack Developer, I have worked with real projects for many years. I've mostly done projects on my own. I love organizing workshops to share my knowledge with others.",
-	header_image_path: "experience.svg",
 	data: [
 		{
 			title: "Software Engineer",
@@ -219,6 +219,13 @@ export const projectsHeader: ProjectsHeaderProps = {
 	description:
 		"My projects make use of a vast variety of latest technology tools. My best experience is to create NodeJS Backend Projects, Python Scripts, and React Project. Below are some of my projects. Note that not all of the mentioned projects are on GitHub yet.",
 	avatar_image_path: "projects_image.svg",
+};
+
+export const educationData: EducationProps = {
+	title: "Education",
+	description:
+		"I actively participate in technical events and learning sessions. Below are some of my certifications.",
+	subtitle: "Basic Qualification and Certifications",
 };
 
 export const contactPageData: ContactPageDataProps = {

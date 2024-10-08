@@ -2,7 +2,6 @@ import { SxProps, Theme } from "@mui/material";
 import { LocalTheme } from "../../theme";
 
 export const certificationHeaderStyles = (localTheme: LocalTheme) => ({
-	fontFamily: "Google Sans Regular",
 	textAlign: "center",
 	color: localTheme.text,
 });
@@ -12,6 +11,7 @@ export const certificationStyles = () => ({
 	flexDirection: "column",
 	alignItems: "center",
 	justifyContent: "center",
+	gap: '1rem',
 });
 
 export const certificationBodyStyles: SxProps<Theme> = (theme) => ({

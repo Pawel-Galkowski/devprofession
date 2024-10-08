@@ -18,7 +18,7 @@ const Certifications: React.FC = () => {
 	return (
 		<Box sx={certificationStyles}>
 			<Fade duration={2000} direction='down' triggerOnce>
-				<Typography variant='h2' sx={certificationHeaderStyles(theme)}>
+				<Typography variant='h4' sx={certificationHeaderStyles(theme)}>
 					Certifications
 				</Typography>
 			</Fade>

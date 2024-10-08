@@ -10,10 +10,13 @@ import { Loader } from "../pages/loader";
 import { NotFound } from "../pages/notFound";
 import { ScrollTop } from "../components/scrollTopButton";
 import NewHeader from "../components/header/header";
-import { Container } from "@mui/material";
+import { Container, Theme } from "@mui/material";
 
-const mainContentStyles = () => ({
+const mainContentStyles = (theme: Theme) => ({
 	padding: "2rem 0 0",
+	[theme.breakpoints.down("md")]: {
+		padding: "2rem 0.3rem 0",
+	},
 });
 
 const Main: React.FC = () => {

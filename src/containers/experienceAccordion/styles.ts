@@ -1,3 +1,9 @@
+import {
+	accordionClasses,
+	accordionSummaryClasses,
+	SxProps,
+	Theme,
+} from "@mui/material";
 import { LocalTheme } from "../../theme";
 
 export const accordionStyles = (theme: LocalTheme) => ({
@@ -28,7 +34,6 @@ export const accordionStyles = (theme: LocalTheme) => ({
 	},
 
 	"& .MuiAccordionSummary-content": {
-		fontFamily: "Google Sans Regular",
 		display: "flex",
 		flexDirection: "row",
 		justifyContent: "space-between",
@@ -36,20 +41,34 @@ export const accordionStyles = (theme: LocalTheme) => ({
 	},
 });
 
-export const experienceAccordStyles = () => ({
+export const experienceAccordStyles: SxProps<Theme> = (theme) => ({
 	borderRadius: "5px",
 	transition: "all 0.2s ease-in-out",
 	"&:hover": {
 		color: "rgba(255, 255, 255, 1)",
 		boxShadow: "0 5px 15px #e2405f",
 	},
+
+	[theme.breakpoints.down("md")]: {
+		[`& .${accordionClasses.root}`]: {
+			border: "0.1rem solid #A7A7A7",
+		},
+	},
 });
 
-export const accordionTitleStyles = () => ({
-	paddingLeft: "0.5rem"
-});
+export const accordionSummaryStyles: SxProps<Theme> = (theme) => ({
+	padding: "0 2rem",
+	display: "flex",
+	flexDirection: "row",
+	alignItems: "center",
+	justifyContent: "space-between",
 
-	
-export const accordionDurationStyles = () => ({
-	paddingRight: "2rem"
+	[theme.breakpoints.down("md")]: {
+		padding: "0 1.1rem",
+		justifyContent: "center",
+		textAlign: "center",
+		[`& .${accordionSummaryClasses.content}`]: {
+			flexDirection: "column",
+		},
+	},
 });
