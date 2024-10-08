@@ -12,7 +12,7 @@ import {
 	CardActions,
 } from "@mui/material";
 import { CertificationProps, ObjectType } from "../../types";
-import { cardStyles, imageStyles } from "./styles";
+import { cardStyles, imageStyles, subTitleStyles } from "./styles";
 import { Send } from "@mui/icons-material";
 
 const CertificationCard: React.FC<{
@@ -32,7 +32,7 @@ const CertificationCard: React.FC<{
 					<Typography gutterBottom variant='h5'>
 						{certificate.title}
 					</Typography>
-					<Typography variant='body2' sx={{ color: theme.secondaryText }}>
+					<Typography variant='body2' sx={subTitleStyles(theme)}>
 						{certificate.subtitle}
 					</Typography>
 				</CardContent>

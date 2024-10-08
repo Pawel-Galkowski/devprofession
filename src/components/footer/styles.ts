@@ -1,8 +1,12 @@
+import { SxProps } from "@mui/material";
 import { LocalTheme } from "../../theme";
 
-export const footerTextStyles = (
-	theme: LocalTheme,
-): React.CSSProperties => ({
+export const footerIconStyles = () => ({
+	fill: "#FF0000",
+	fontSize: "1.3rem",
+});
+
+export const footerTextStyles = (theme: LocalTheme): SxProps => ({
 	color: theme.secondaryText,
 	textAlign: "center",
 	fontWeight: "bold",

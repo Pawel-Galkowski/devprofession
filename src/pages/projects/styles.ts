@@ -13,7 +13,7 @@ export const projectsPageStyles = (theme: Theme) => ({
 	},
 });
 
-export const projectsBoxDescriptionStyles = {
+export const projectsDescriptionStyles = {
 	display: "flex",
 	flexDirection: "column",
 	gap: "1rem",
@@ -41,7 +41,7 @@ export const projectsHeadingImgStyles = {
 		height: "auto",
 	},
 };
-export const projectsHeadingTextDivStyles = {
+export const projectsHeadingTextSectionStyles = {
 	textAlign: "center",
 	display: "flex",
 	flexDirection: "column",
@@ -61,7 +61,7 @@ export const projectsHeaderDetailTextStyles = (localTheme: LocalTheme) => ({
 	color: localTheme.secondaryText,
 });
 
-export const repoCardsDivMainStyles: SxProps<Theme> = (theme) => ({
+export const projectsRepositoryCardStyles: SxProps<Theme> = (theme) => ({
 	display: "flex",
 	flexDirection: "column",
 	gap: "1rem",

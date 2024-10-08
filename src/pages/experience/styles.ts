@@ -44,15 +44,12 @@ export const experienceHeadingStyles = () => ({
 });
 
 export const experienceHeadingTextStyles = (localTheme: LocalTheme) => ({
-	fontSize: "56px",
-	fontWeight: 400,
 	fontFamily: "Google Sans Medium",
-	lineHeight: 1.1,
 	textAlign: "center",
 	color: localTheme.text,
 });
+
 export const experienceHeadingSubTextStyles = (localTheme: LocalTheme) => ({
-	fontSize: "30px",
 	fontFamily: "Google Sans Regular",
 	textAlign: "center",
 	marginBottom: "10px",

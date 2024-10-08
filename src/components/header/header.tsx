@@ -9,7 +9,7 @@ import { ThemeEnum, themes } from "../../theme";
 import { CgSun } from "react-icons/cg";
 import { HiMoon } from "react-icons/hi";
 import {
-	buttonStyle,
+	buttonStyles,
 	headerLayoutStyles,
 	headerStyles,
 	logoStyles,
@@ -43,7 +43,7 @@ const NewHeader: React.FC = () => {
 						<Link to='/'>{homePage.logo_name}</Link>
 					</Typography>
 					<DesktopMenu />
-					<Button sx={buttonStyle(themeState, theme)} onClick={changeTheme}>
+					<Button sx={buttonStyles(themeState, theme)} onClick={changeTheme}>
 						{theme.name === ThemeEnum.dark ? (
 							<HiMoon strokeWidth={1} size={20} color={theme.themeIcon} />
 						) : (

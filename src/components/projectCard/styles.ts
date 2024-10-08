@@ -1,7 +1,7 @@
 import { Theme } from "@mui/material";
 import { LocalTheme } from "../../theme";
 
-export const projectCardStyle = (theme: LocalTheme) => ({
+export const projectCardStyles = (theme: LocalTheme) => ({
 	color: "rgb(88, 96, 105)",
 	boxShadow: "rgba(0, 0, 0, 0.2) 0px 10px 30px -15px",
 	padding: "2rem",
@@ -17,7 +17,7 @@ export const projectCardStyle = (theme: LocalTheme) => ({
 	},
 });
 
-export const projectInformationSectionStyle = (
+export const projectInformationSectionStyles = (
 	theme: LocalTheme,
 ) => ({
 	display: "flex",
@@ -31,7 +31,7 @@ export const projectInformationSectionStyle = (
 	},
 });
 
-export const actionButonsSectionStyle = (theme: Theme) => ({
+export const actionButonsSectionStyles = (theme: Theme) => ({
 	display: "flex",
 	flexDirection: "row",
 	alignItems: "center",
@@ -43,14 +43,14 @@ export const actionButonsSectionStyle = (theme: Theme) => ({
 	},
 });
 
-export const repositoryNameStyle = (localTheme: LocalTheme) => ({
+export const repositoryNameStyles = (localTheme: LocalTheme) => ({
 	whiteSpace: "nowrap",
 	textOverflow: "ellipsis",
 	fontFamily: "Google Sans Regular",
 	color: localTheme.text
 });
 
-export const repositoryDescriptionStyle = (localTheme: LocalTheme) => ({
+export const repositoryDescriptionStyles = (localTheme: LocalTheme) => ({
 	wordWrap: "break-word",
 	textAlign: "left",
 	display: "-webkit-box",
@@ -60,8 +60,8 @@ export const repositoryDescriptionStyle = (localTheme: LocalTheme) => ({
 	boxOrient: "vertical",
 });
 
-export const languagesIconsStyle = () => ({
-	listStyle: "none",
+export const languagesIconsStyles = () => ({
+	listStyles: "none",
 	display: "flex",
 	flexDirection: "row",
 	gap: "0.5rem",
@@ -72,7 +72,7 @@ export const languagesIconsStyle = () => ({
 	},
 });
 
-export const repositoryDetailsStyle = () => ({
+export const repositoryDetailsStyles = () => ({
 	display: "flex",
 	flexDirection: "column",
 	alignItems: "flex-start",

@@ -5,17 +5,17 @@ import { useSelector } from "react-redux";
 import { ObjectType } from "../../types";
 import { ThemeEnum, themes } from "../../theme";
 import {
-	contactLinkStyle,
-	educationLinkStyle,
-	experienceLinkStyle,
-	homeLinkStyle,
-	menuItemStyle,
-	menuMobileLinkItemStyle,
+	contactLinkStyles,
+	educationLinkStyles,
+	experienceLinkStyles,
+	homeLinkStyles,
+	menuItemStyles,
+	menuMobileLinkItemStyles,
 	mobileMenuBoxStyles,
-	mobileMenuExitIconStyle,
+	mobileMenuExitIconStyles,
 	mobileMenuModalStyles,
 	overlayMenuStyles,
-	projectsLinkStyle,
+	projectsLinkStyles,
 } from "./styles";
 import { Link } from "react-router-dom";
 
@@ -58,44 +58,44 @@ const MobileMenu: React.FC = () => {
 				sx={mobileMenuModalStyles}
 			>
 				<Box sx={overlayMenuStyles}>
-					<IconButton onClick={handleCloseNavMenu} sx={mobileMenuExitIconStyle}>
+					<IconButton onClick={handleCloseNavMenu} sx={mobileMenuExitIconStyles}>
 						<Close htmlColor='#fff' />
 					</IconButton>
-					<Link to='/' style={menuMobileLinkItemStyle(theme)}>
+					<Link to='/' style={menuMobileLinkItemStyles(theme)}>
 						<MenuItem
-							sx={[menuItemStyle, homeLinkStyle]}
+							sx={[menuItemStyles, homeLinkStyles]}
 							onClick={handleCloseNavMenu}
 						>
 							Home
 						</MenuItem>
 					</Link>
-					<Link to='/education' style={menuMobileLinkItemStyle(theme)}>
+					<Link to='/education' style={menuMobileLinkItemStyles(theme)}>
 						<MenuItem
-							sx={[menuItemStyle, educationLinkStyle]}
+							sx={[menuItemStyles, educationLinkStyles]}
 							onClick={handleCloseNavMenu}
 						>
 							Education and Certifications
 						</MenuItem>
 					</Link>
-					<Link to='/experience' style={menuMobileLinkItemStyle(theme)}>
+					<Link to='/experience' style={menuMobileLinkItemStyles(theme)}>
 						<MenuItem
-							sx={[menuItemStyle, experienceLinkStyle]}
+							sx={[menuItemStyles, experienceLinkStyles]}
 							onClick={handleCloseNavMenu}
 						>
 							Experience
 						</MenuItem>
 					</Link>
-					<Link to='/projects' style={menuMobileLinkItemStyle(theme)}>
+					<Link to='/projects' style={menuMobileLinkItemStyles(theme)}>
 						<MenuItem
-							sx={[menuItemStyle, projectsLinkStyle]}
+							sx={[menuItemStyles, projectsLinkStyles]}
 							onClick={handleCloseNavMenu}
 						>
 							Projects
 						</MenuItem>
 					</Link>
-					<Link to='/contact' style={menuMobileLinkItemStyle(theme)}>
+					<Link to='/contact' style={menuMobileLinkItemStyles(theme)}>
 						<MenuItem
-							sx={[menuItemStyle, contactLinkStyle]}
+							sx={[menuItemStyles, contactLinkStyles]}
 							onClick={handleCloseNavMenu}
 						>
 							Contact and Resume

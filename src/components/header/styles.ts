@@ -1,7 +1,7 @@
 import { Theme } from "@mui/material";
 import { LocalTheme, ThemeEnum } from "../../theme";
 
-export const headerStyles = (theme: Theme) => ({
+export const headerStyles = () => ({
 	background: "transparent",
 	boxShadow: "none",
 	display: "block",
@@ -53,7 +53,7 @@ export const logoStyles = (localTheme: LocalTheme) => (theme: Theme) => ({
 	},
 });
 
-export const buttonStyle =
+export const buttonStyles =
 	(themeEnum: ThemeEnum, localTheme: LocalTheme) => (theme: Theme) => ({
 		backgroundColor: localTheme.themeBackgroundIcon,
 		cursor: "pointer",
@@ -77,7 +77,7 @@ export const buttonStyle =
 		},
 	});
 
-export const menuItemStyle = () => ({
+export const menuItemStyles = () => ({
 	borderRadius: 5,
 	fontWeight: "bold",
 	whiteSpace: "nowrap",
@@ -85,7 +85,7 @@ export const menuItemStyle = () => ({
 	padding: 0,
 });
 
-export const menuLinkItemStyle = (theme: LocalTheme) => ({
+export const menuLinkItemStyles = (theme: LocalTheme) => ({
 	fontFamily: "Google Sans Regular",
 	color: theme.text,
 	display: "block",
@@ -93,7 +93,7 @@ export const menuLinkItemStyle = (theme: LocalTheme) => ({
 	textDecoration: "none",
 });
 
-export const menuMobileLinkItemStyle = (theme: LocalTheme) => ({
+export const menuMobileLinkItemStyles = (theme: LocalTheme) => ({
 	fontFamily: "Google Sans Regular",
 	color: "#fff",
 	display: "block",
@@ -117,7 +117,7 @@ export const mobileMenuModalStyles = (theme: Theme) => ({
 	},
 });
 
-export const desktopMenuBoxStyles = (theme: Theme) => ({
+export const desktopMenuStyles = (theme: Theme) => ({
 	flexGrow: 1,
 	display: "flex",
 	alignItems: "center",
@@ -127,35 +127,35 @@ export const desktopMenuBoxStyles = (theme: Theme) => ({
 	},
 });
 
-export const homeLinkStyle = () => ({
+export const homeLinkStyles = () => ({
 	":hover": {
 		boxShadow: "0 2px 10px #2ab0ee",
 		backgroundColor: "transparent",
 		color: "#ffffff",
 	},
 });
-export const educationLinkStyle = () => ({
+export const educationLinkStyles = () => ({
 	":hover": {
 		boxShadow: "0 2px 10px #eb6559",
 		backgroundColor: "transparent",
 		color: "#ffffff",
 	},
 });
-export const experienceLinkStyle = () => ({
+export const experienceLinkStyles = () => ({
 	":hover": {
 		boxShadow: "0 2px 10px #f7b908",
 		backgroundColor: "transparent",
 		color: "#ffffff",
 	},
 });
-export const projectsLinkStyle = () => ({
+export const projectsLinkStyles = () => ({
 	":hover": {
 		boxShadow: "0 2px 10px #e44160",
 		backgroundColor: "transparent",
 		color: "#ffffff",
 	},
 });
-export const contactLinkStyle = () => ({
+export const contactLinkStyles = () => ({
 	":hover": {
 		boxShadow: "0 1px 10px #47a148",
 		backgroundColor: "transparent",
@@ -163,7 +163,7 @@ export const contactLinkStyle = () => ({
 	},
 });
 
-export const mobileMenuExitIconStyle = () => ({
+export const mobileMenuExitIconStyles = () => ({
 	position: "absolute",
 	top: 10,
 	right: 10,

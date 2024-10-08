@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { ThemeEnum, themes } from "../../theme";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { ObjectType } from "../../types";
-import { footerTextStyles } from "./styles";
+import { footerIconStyles, footerTextStyles } from "./styles";
 import { Typography } from "@mui/material";
 
 const Footer: React.FC = () => {
@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
 	const theme = themes[themeState];
 	return (
 		<Typography variant="h5" sx={footerTextStyles(theme)}>
-			Made with <FavoriteIcon sx={{ fill: "#FF0000", fontSize: "1.3rem" }} /> by{" "}
+			Made with <FavoriteIcon sx={footerIconStyles} /> by{" "}
 			{homePage.footer_information}
 		</Typography>
 	);

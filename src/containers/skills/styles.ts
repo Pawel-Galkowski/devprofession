@@ -1,7 +1,7 @@
 import { SxProps, Theme } from "@mui/material";
 import { LocalTheme } from "../../theme";
 
-export const skillsMainDivStyles: SxProps<Theme> = (theme) => ({
+export const skillsLeftImgSectionStyles: SxProps<Theme> = (theme) => ({
 	display: "flex",
 	gap: "4rem",
 	alignItems: "center",
@@ -17,7 +17,7 @@ export const skillsMainDivStyles: SxProps<Theme> = (theme) => ({
 	},
 });
 
-export const skillsMainDivSecondStyles: SxProps<Theme> = (theme) => ({
+export const skillsRightImgSectionStyles: SxProps<Theme> = (theme) => ({
 	display: "flex",
 	gap: "4rem",
 	alignItems: "center",
@@ -49,7 +49,7 @@ export const skillsTwoLayersLayoutStyles: SxProps<Theme> = (theme) => ({
 	},
 });
 
-export const skillsTextDivStyles: SxProps<Theme> = (theme) => ({
+export const skillsTextStyles: SxProps<Theme> = (theme) => ({
 	marginTop: "3%",
 	fontFamily: "Google Sans Regular",
 
@@ -58,7 +58,7 @@ export const skillsTextDivStyles: SxProps<Theme> = (theme) => ({
 	},
 });
 
-export const skillsImageDivStyles = () => ({
+export const skillsImageStyles = () => ({
 	display: "flex",
 	alignItems: "center",
 	justifyContent: "center",

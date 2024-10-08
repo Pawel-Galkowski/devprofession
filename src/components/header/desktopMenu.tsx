@@ -4,14 +4,14 @@ import { useSelector } from "react-redux";
 import { ObjectType } from "../../types";
 import { ThemeEnum, themes } from "../../theme";
 import {
-	contactLinkStyle,
-	desktopMenuBoxStyles,
-	educationLinkStyle,
-	experienceLinkStyle,
-	homeLinkStyle,
-	menuItemStyle,
-	menuLinkItemStyle,
-	projectsLinkStyle,
+	contactLinkStyles,
+	desktopMenuStyles,
+	educationLinkStyles,
+	experienceLinkStyles,
+	homeLinkStyles,
+	menuItemStyles,
+	menuLinkItemStyles,
+	projectsLinkStyles,
 } from "./styles";
 import { Link } from "react-router-dom";
 
@@ -23,29 +23,29 @@ const DesktopMenu: React.FC = () => {
 	const theme = themes[themeState];
 
 	return (
-		<Box sx={desktopMenuBoxStyles}>
-			<MenuItem sx={[menuItemStyle, homeLinkStyle]}>
-				<Link to='/' style={menuLinkItemStyle(theme)}>
+		<Box sx={desktopMenuStyles}>
+			<MenuItem sx={[menuItemStyles, homeLinkStyles]}>
+				<Link to='/' style={menuLinkItemStyles(theme)}>
 					Home
 				</Link>
 			</MenuItem>
-			<MenuItem sx={[menuItemStyle, educationLinkStyle]}>
-				<Link to='/education' style={menuLinkItemStyle(theme)}>
+			<MenuItem sx={[menuItemStyles, educationLinkStyles]}>
+				<Link to='/education' style={menuLinkItemStyles(theme)}>
 					Education and Certifications
 				</Link>
 			</MenuItem>
-			<MenuItem sx={[menuItemStyle, experienceLinkStyle]}>
-				<Link to='/experience' style={menuLinkItemStyle(theme)}>
+			<MenuItem sx={[menuItemStyles, experienceLinkStyles]}>
+				<Link to='/experience' style={menuLinkItemStyles(theme)}>
 					Experience
 				</Link>
 			</MenuItem>
-			<MenuItem sx={[menuItemStyle, projectsLinkStyle]}>
-				<Link to='/projects' style={menuLinkItemStyle(theme)}>
+			<MenuItem sx={[menuItemStyles, projectsLinkStyles]}>
+				<Link to='/projects' style={menuLinkItemStyles(theme)}>
 					Projects
 				</Link>
 			</MenuItem>
-			<MenuItem sx={[menuItemStyle, contactLinkStyle]}>
-				<Link to='/contact' style={menuLinkItemStyle(theme)}>
+			<MenuItem sx={[menuItemStyles, contactLinkStyles]}>
+				<Link to='/contact' style={menuLinkItemStyles(theme)}>
 					Contact and Resume
 				</Link>
 			</MenuItem>

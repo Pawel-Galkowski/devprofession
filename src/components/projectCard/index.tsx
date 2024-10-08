@@ -9,13 +9,13 @@ import {
 	ProjectTechnologiesProps,
 } from "../../types";
 import {
-	actionButonsSectionStyle,
-	languagesIconsStyle,
-	projectCardStyle,
-	projectInformationSectionStyle,
-	repositoryDescriptionStyle,
-	repositoryDetailsStyle,
-	repositoryNameStyle,
+	actionButonsSectionStyles,
+	languagesIconsStyles,
+	projectCardStyles,
+	projectInformationSectionStyles,
+	repositoryDescriptionStyles,
+	repositoryDetailsStyles,
+	repositoryNameStyles,
 } from "./styles";
 import { v4 as uuidv4 } from "uuid";
 
@@ -27,19 +27,19 @@ const ProjectCard: React.FC<{ repo: ProjectsProps }> = ({ repo }) => {
 	const theme = themes[themeState];
 	return (
 		<Fade direction='down' duration={2000} triggerOnce>
-			<Box sx={projectCardStyle(theme)} key={uuidv4()}>
+			<Box sx={projectCardStyles(theme)} key={uuidv4()}>
 				<Box className='repo-name-div'>
-					<Typography variant='h4' sx={repositoryNameStyle(theme)}>
+					<Typography variant='h4' sx={repositoryNameStyles(theme)}>
 						{repo.name}
 					</Typography>
 				</Box>
-				<Typography variant='body2' sx={repositoryDescriptionStyle(theme)}>
+				<Typography variant='body2' sx={repositoryDescriptionStyles(theme)}>
 					{repo.description}
 				</Typography>
-				<Box sx={projectInformationSectionStyle(theme)}>
-					<Box sx={repositoryDetailsStyle}>
+				<Box sx={projectInformationSectionStyles(theme)}>
+					<Box sx={repositoryDetailsStyles}>
 						Technologies:
-						<List sx={languagesIconsStyle}>
+						<List sx={languagesIconsStyles}>
 							{repo.technologies.map((logo: ProjectTechnologiesProps) => (
 								<ListItem key={uuidv4()} title={logo.name} disablePadding>
 									{logo.icon}
@@ -47,7 +47,7 @@ const ProjectCard: React.FC<{ repo: ProjectsProps }> = ({ repo }) => {
 							))}
 						</List>
 					</Box>
-					<Box sx={actionButonsSectionStyle}>
+					<Box sx={actionButonsSectionStyles}>
 						<Link href={repo.links.github} target='_blank'>
 							<Button
 								variant='contained'

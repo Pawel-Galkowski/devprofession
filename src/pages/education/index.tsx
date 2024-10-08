@@ -10,9 +10,8 @@ import { ObjectType } from "../../types";
 import {
 	basicEducationStyles,
 	educationHeaderDetailTextStyles,
-	headingDivStyles,
+	headingStyles,
 	headingSubTextStyles,
-	headingTextDivStyles,
 	headingTextStyles,
 } from "./styles";
 
@@ -24,12 +23,12 @@ const Education: React.FC = () => {
 
 	return (
 		<Box sx={basicEducationStyles}>
-			<Box sx={headingDivStyles}>
+			<Box sx={headingStyles}>
 				<Fade duration={2000} direction='left' triggerOnce>
 					<EducationImg />
 				</Fade>
 				<Fade duration={2000} direction='right' triggerOnce>
-					<Box sx={headingTextDivStyles}>
+					<>
 						<Typography variant='h2' sx={headingTextStyles(theme)}>
 							Education
 						</Typography>
@@ -43,7 +42,7 @@ const Education: React.FC = () => {
 							I actively participate in technical events and learning sessions.
 							Below are some of my certifications.
 						</Typography>
-					</Box>
+					</>
 				</Fade>
 			</Box>
 			<Educations />

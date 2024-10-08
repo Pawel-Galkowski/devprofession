@@ -4,13 +4,12 @@ import { Box, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import { ThemeEnum, themes } from "../../theme";
 import {
-	experienceCardBodyDiv,
-	experienceCardCompany,
-	experienceCardDescription,
-	experienceCardDuration,
-	experienceCardHeadingLeft,
-	experienceCardHeadingRight,
-	experienceCardInsideHeaderDiv,
+	experienceCardBodyStyles,
+	experienceCardCompanyStyles,
+	experienceCardDurationStyles,
+	experienceCardHeadingLeftStyles,
+	experienceCardHeadingRightStyles,
+	experienceCardInsideHeaderStyles,
 	technologiesSectionStyles,
 } from "./styles";
 import CustomItemList from "../customItemList";
@@ -23,17 +22,17 @@ export const ExperienceProjects: React.FC<{
 	);
 	const theme = themes[themeState];
 	return (
-		<Box sx={experienceCardBodyDiv}>
-			<Box sx={experienceCardInsideHeaderDiv}>
-				<Box sx={experienceCardHeadingLeft}>
-					<Typography variant='h5' sx={experienceCardCompany(theme)}>
+		<Box sx={experienceCardBodyStyles}>
+			<Box sx={experienceCardInsideHeaderStyles}>
+				<Box sx={experienceCardHeadingLeftStyles}>
+					<Typography variant='h5' sx={experienceCardCompanyStyles(theme)}>
 						{project.role}
 					</Typography>
 				</Box>
-				<Box sx={experienceCardHeadingRight}>
+				<Box sx={experienceCardHeadingRightStyles}>
 					<Typography
 						variant='body1'
-						sx={[experienceCardDescription, experienceCardDuration(theme)]}
+						sx={experienceCardDurationStyles(theme)}
 					>
 						{project.duration}
 					</Typography>

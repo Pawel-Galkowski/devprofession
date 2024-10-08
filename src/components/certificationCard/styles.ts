@@ -1,4 +1,4 @@
-import { ThemeEnum, themes, ThemeType } from "../../theme";
+import { ThemeEnum, themes, ThemeType, LocalTheme } from '../../theme';
 
 export const imageStyles = () => ({
 	padding: "0.3rem",
@@ -24,3 +24,7 @@ export const cardStyles = (themeState: ThemeType) => {
 		boxShadow: `6px 6px 12px -4px ${revertTheme.secondaryText}`,
 	};
 };
+
+export const subTitleStyles = (localTheme: LocalTheme) => ({
+	color: localTheme.secondaryText
+})

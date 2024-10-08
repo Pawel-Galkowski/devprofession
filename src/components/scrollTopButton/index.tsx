@@ -34,7 +34,7 @@ export function ScrollTop() {
 			<Box
 				onClick={handleClick}
 				role='presentation'
-				sx={positionBoxStyle(theme)}
+				sx={positionBoxStyle}
 			>
 				<Fab size='medium' aria-label='scroll back to top' sx={fabStyle(theme)}>
 					<KeyboardArrowUp sx={arrowStyle(theme)} />

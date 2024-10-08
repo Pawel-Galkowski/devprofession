@@ -13,7 +13,7 @@ export const arrowStyle = (theme: LocalTheme) => ({
 	fill: theme.themeIcon,
 });
 
-export const positionBoxStyle = (theme: LocalTheme) => ({
+export const positionBoxStyle = () => ({
 	position: "fixed",
 	bottom: 24,
 	right: 24,

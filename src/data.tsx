@@ -29,7 +29,6 @@ import {
 } from "./assests/svg/icons";
 import { BackEndImg, FrontEndImg } from "./assests/svg/images";
 
-//Home Page
 export const homePage: HomePageProps = {
 	title: "Hello 👋.",
 	footer_information: "Pawel Galkowski",
@@ -130,11 +129,9 @@ export const certifications: CertificationProps[] = [
 		subtitle: "Microsoft Certified",
 		logo: <MicrosoftLogoImg />,
 		certificate_link: "",
-		// "https://drive.google.com/file/d/12se6bMep48WXA1PlizTBAgCnW0GXM6wq/view?usp=sharing",
 	},
 ];
 
-// Experience Page
 export const experience: ExperienceProps = {
 	title: "Experience",
 	subtitle: "Work information list",
@@ -217,7 +214,6 @@ export const experience: ExperienceProps = {
 	],
 };
 
-// Projects Page
 export const projectsHeader: ProjectsHeaderProps = {
 	title: "Projects",
 	description:
@@ -225,7 +221,6 @@ export const projectsHeader: ProjectsHeaderProps = {
 	avatar_image_path: "projects_image.svg",
 };
 
-// Contact Page
 export const contactPageData: ContactPageDataProps = {
 	title: "Contact Me",
 	description:

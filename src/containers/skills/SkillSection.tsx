@@ -12,10 +12,10 @@ import { ObjectType, SkillsProps } from "../../types";
 import { v4 as uuidv4 } from "uuid";
 import {
 	skillsHeadingStyles,
-	skillsImageDivStyles,
-	skillsMainDivSecondStyles,
-	skillsMainDivStyles,
-	skillsTextDivStyles,
+	skillsImageStyles,
+	skillsRightImgSectionStyles,
+	skillsLeftImgSectionStyles,
+	skillsTextStyles,
 	skillsTwoLayersLayoutStyles,
 } from "./styles";
 import CustomItemList from "../../components/customItemList";
@@ -36,12 +36,12 @@ const SkillSection: React.FC = () => {
 		<Box sx={skillsTwoLayersLayoutStyles}>
 			{skills.map((item: SkillsProps, index) =>
 				index % 2 === 0 ? (
-					<Box sx={skillsMainDivStyles} key={uuidv4()}>
+					<Box sx={skillsLeftImgSectionStyles} key={uuidv4()}>
 						<Fade duration={2000} direction='left' triggerOnce>
-							<Box sx={skillsImageDivStyles}>{item.image}</Box>
+							<Box sx={skillsImageStyles}>{item.image}</Box>
 						</Fade>
 
-						<Box sx={skillsTextDivStyles}>
+						<Box sx={skillsTextStyles}>
 							<Fade cascade direction='right' triggerOnce>
 								<ItemTitle item={item} />
 							</Fade>
@@ -54,8 +54,8 @@ const SkillSection: React.FC = () => {
 						</Box>
 					</Box>
 				) : (
-					<Box sx={skillsMainDivSecondStyles} key={uuidv4()}>
-						<Box sx={skillsTextDivStyles}>
+					<Box sx={skillsRightImgSectionStyles} key={uuidv4()}>
+						<Box sx={skillsTextStyles}>
 							<Fade cascade direction='left' triggerOnce>
 								<ItemTitle item={item} />
 							</Fade>
@@ -67,7 +67,7 @@ const SkillSection: React.FC = () => {
 							</Fade>
 						</Box>
 						<Fade duration={2000} cascade direction='right' triggerOnce>
-							<Box sx={skillsImageDivStyles}>{item.image}</Box>
+							<Box sx={skillsImageStyles}>{item.image}</Box>
 						</Fade>
 					</Box>
 				),

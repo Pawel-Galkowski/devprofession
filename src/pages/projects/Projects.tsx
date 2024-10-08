@@ -10,14 +10,14 @@ import { ObjectType, ProjectsProps } from "../../types";
 import { v4 as uuidv4 } from "uuid";
 import {
 	buttonStyles,
-	projectsBoxDescriptionStyles,
+	projectsDescriptionStyles,
 	projectsHeaderDetailTextStyles,
 	projectsHeadingImgStyles,
 	projectsHeadingStyles,
-	projectsHeadingTextDivStyles,
+	projectsHeadingTextSectionStyles,
 	projectsHeadingTextStyles,
 	projectsPageStyles,
-	repoCardsDivMainStyles,
+	projectsRepositoryCardStyles,
 } from "./styles";
 
 const Projects: React.FC = () => {
@@ -35,7 +35,7 @@ const Projects: React.FC = () => {
 					</Box>
 				</Fade>
 				<Fade duration={2000} direction='right' cascade triggerOnce>
-					<Box sx={projectsHeadingTextDivStyles}>
+					<Box sx={projectsHeadingTextSectionStyles}>
 						<Typography variant='h2' sx={projectsHeadingTextStyles(theme)}>
 							{projectsHeader.title}
 						</Typography>
@@ -45,8 +45,8 @@ const Projects: React.FC = () => {
 					</Box>
 				</Fade>
 			</Box>
-			<Box sx={projectsBoxDescriptionStyles}>
-				<Box sx={repoCardsDivMainStyles}>
+			<Box sx={projectsDescriptionStyles}>
+				<Box sx={projectsRepositoryCardStyles}>
 					{projects.map((repo: ProjectsProps) => (
 						<ProjectCard repo={repo} key={uuidv4()} />
 					))}

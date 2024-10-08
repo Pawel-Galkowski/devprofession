@@ -42,22 +42,26 @@ export const headingDivStyles: SxProps<Theme> = (theme) => ({
 	},
 });
 
-export const headingImgDivStyles = () => ({
+export const headingStyles: SxProps<Theme> = (theme) => ({
+	display: "flex",
 	alignItems: "center",
 	justifyContent: "center",
+	flexDirection: "row",
 	"& > *": {
-		maxWidth: "100%",
-		height: "auto",
+		flex: 1,
 	},
-});
 
-export const headingTextDivStyles = () => ({
-	textAlign: "center",
+	[theme.breakpoints.down("md")]: {
+		flexDirection: "column",
+
+		"& svg": {
+			maxWidth: '90%'
+		},
+	},
 });
 
 export const headingTextStyles = (localTheme: LocalTheme): SxProps<Theme> => ({
 	fontFamily: "Google Sans Medium",
-	lineHeight: 1.1,
 	textAlign: "center",
 	color: localTheme.text,
 });
@@ -75,6 +79,7 @@ export const educationHeaderDetailTextStyles =
 	(theme) => ({
 		fontFamily: "Google Sans Medium",
 		color: localTheme.secondaryText,
+		textAlign: "center",
 
 		[theme.breakpoints.down("md")]: {
 			textAlign: "center",
