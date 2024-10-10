@@ -4,13 +4,14 @@ import { Fade } from "react-awesome-reveal";
 import { ObjectType } from "../../types";
 import { ThemeEnum, themes } from "../../theme";
 import { useSelector } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
 import {
 	topPageStyles,
 	informationBoxStyles,
 	topPageTitleStyles,
 	topPageSubTitleStyles,
 	topPageImageStyles,
-    topPageBodyTextStyles,
+	topPageBodyTextStyles,
 } from "./styles";
 
 interface TopPageSectionProps {
@@ -18,7 +19,7 @@ interface TopPageSectionProps {
 	subTitle?: string;
 	bodyText?: string;
 	image: JSX.Element;
-    additionalElements?: JSX.Element[]
+	additionalElements?: JSX.Element[];
 }
 
 const TopPageSection: React.FC<TopPageSectionProps> = ({
@@ -26,10 +27,10 @@ const TopPageSection: React.FC<TopPageSectionProps> = ({
 	subTitle,
 	bodyText,
 	image,
-    additionalElements,
+	additionalElements,
 }) => {
 	const themeState: ThemeEnum = useSelector(
-		(state: ObjectType) => state.theme.value,
+		(state: ObjectType) => state.value,
 	);
 	const theme = themes[themeState];
 
@@ -52,7 +53,9 @@ const TopPageSection: React.FC<TopPageSectionProps> = ({
 						{bodyText}
 					</Typography>
 
-                    {additionalElements?.map((item: JSX.Element) => item)}
+					{additionalElements?.map((item: JSX.Element) => (
+						<Box key={uuidv4()}>{item}</Box>
+					))}
 				</Fade>
 			</Box>
 		</Box>

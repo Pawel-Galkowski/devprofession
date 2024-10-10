@@ -21,7 +21,7 @@ import { v4 as uuidv4 } from "uuid";
 
 const ProjectCard: React.FC<{ repo: ProjectsProps }> = ({ repo }) => {
 	const themeState: ThemeEnum = useSelector(
-		(state: ObjectType) => state.theme.value,
+		(state: ObjectType) => state.value,
 	);
 
 	const theme = themes[themeState];

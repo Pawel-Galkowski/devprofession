@@ -1,6 +1,6 @@
 import React from "react";
 
-const MongoIcon = () => (
+const MongoIcon: React.FC = () => (
 	<svg width='100%' height='100%' viewBox='0 0 32 32'>
 		<defs>
 			<linearGradient

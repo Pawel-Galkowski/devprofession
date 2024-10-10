@@ -22,7 +22,7 @@ import CustomItemList from "../customItemList";
 
 const DegreeCard: React.FC<{ degree: DegreeProps }> = ({ degree }) => {
 	const themeState: ThemeEnum = useSelector(
-		(state: ObjectType) => state.theme.value,
+		(state: ObjectType) => state.value,
 	);
 	const theme = themes[themeState];
 

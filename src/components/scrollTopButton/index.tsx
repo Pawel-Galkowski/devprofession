@@ -1,3 +1,4 @@
+import React from "react";
 import { KeyboardArrowUp } from "@mui/icons-material";
 import { Box, Fab, Fade, useScrollTrigger } from "@mui/material";
 import { useCallback } from "react";
@@ -6,9 +7,9 @@ import { useSelector } from "react-redux";
 import { ObjectType } from "../../types";
 import { arrowStyle, fabStyle, positionBoxStyle } from "./styles";
 
-export function ScrollTop() {
+const scrollTopButton: React.FC = () => {
 	const themeState: ThemeEnum = useSelector(
-		(state: ObjectType) => state.theme.value,
+		(state: ObjectType) => state.value,
 	);
 
 	const theme = themes[themeState];
@@ -31,15 +32,13 @@ export function ScrollTop() {
 
 	return (
 		<Fade in={trigger}>
-			<Box
-				onClick={handleClick}
-				role='presentation'
-				sx={positionBoxStyle}
-			>
+			<Box onClick={handleClick} role='presentation' sx={positionBoxStyle}>
 				<Fab size='medium' aria-label='scroll back to top' sx={fabStyle(theme)}>
 					<KeyboardArrowUp sx={arrowStyle(theme)} />
 				</Fab>
 			</Box>
 		</Fade>
 	);
-}
+};
+
+export default scrollTopButton;

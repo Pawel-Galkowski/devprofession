@@ -1,6 +1,6 @@
 import React from "react";
 
-const PostmanIcon = () => (
+const PostmanIcon: React.FC = () => (
 	<svg
 		width='100%'
 		height='100%'

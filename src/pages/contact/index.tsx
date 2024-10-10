@@ -7,13 +7,13 @@ import { Box, Button } from "@mui/material";
 import { ObjectType } from "../../types";
 import { additionalInformationStyles, resumeButtonStyles } from "./styles";
 import { Link } from "react-router-dom";
-import { ContactImg } from "../../assests/svg/images";
+import { ContactImg } from "../../assets/svg/images";
 import SocialMedia from "../../components/socialMedia";
 import TopPageSection from "../../components/topPageSection";
 
 const Contact: React.FC = () => {
 	const themeState: ThemeEnum = useSelector(
-		(state: ObjectType) => state.theme.value,
+		(state: ObjectType) => state.value,
 	);
 	const theme = themes[themeState];
 

@@ -1,0 +1,22 @@
+{
+	"settings": {
+		"react": {
+			"version": "detect"
+		},
+		"files": ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+		"languageOptions": { "globals": "globals.browser" },
+		"ignores": ["./jest.config.ts"],
+		"rules": {}
+	},
+	"overrides": [
+		{
+			"files": ["**/*.{spec, test}.*"],
+			"plugins": ["jest"],
+			"env": {
+				"jest": true,
+				"jest/globals": true
+			}
+		}
+	],
+	"extends": ["react-app", "react-app/jest"]
+}

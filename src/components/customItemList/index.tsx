@@ -17,7 +17,7 @@ interface CustomItemListProps {
 
 const CustomItemList: React.FC<{ item: CustomItemListProps }> = ({ item }) => {
 	const themeState: ThemeEnum = useSelector(
-		(state: ObjectType) => state.theme.value,
+		(state: ObjectType) => state.value,
 	);
 	const theme = themes[themeState];
 	return (

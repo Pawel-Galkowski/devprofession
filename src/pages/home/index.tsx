@@ -1,7 +1,7 @@
 import React from "react";
 import Skills from "../../containers/skills/Skills";
 import { Box, Button, Typography } from "@mui/material";
-import { FeelingProudImg } from "../../assests/svg/images";
+import { FeelingProudImg } from "../../assets/svg/images";
 import SocialMedia from "../../components/socialMedia";
 import {
 	contactButtonBoxStyles,
@@ -22,7 +22,7 @@ import { useSelector } from "react-redux";
 
 const Home: React.FC = () => {
 	const themeState: ThemeEnum = useSelector(
-		(state: ObjectType) => state.theme.value,
+		(state: ObjectType) => state.value,
 	);
 	const theme = themes[themeState];
 

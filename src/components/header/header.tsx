@@ -6,8 +6,7 @@ import { ObjectType } from "../../types";
 import { useDispatch, useSelector } from "react-redux";
 import { homePage } from "../../data";
 import { ThemeEnum, themes } from "../../theme";
-import { CgSun } from "react-icons/cg";
-import { HiMoon } from "react-icons/hi";
+import { LightMode, DarkMode } from "@mui/icons-material";
 import {
 	buttonStyles,
 	headerLayoutStyles,
@@ -16,13 +15,14 @@ import {
 } from "./styles";
 import { setDarkTheme, setLightTheme } from "../../reducers/themeReducer";
 import { Link } from "react-router-dom";
+import { AppDispatch } from "../../store";
 
 const NewHeader: React.FC = () => {
 	const themeState: ThemeEnum = useSelector(
-		(state: ObjectType) => state.theme.value,
+		(state: ObjectType) => state.value,
 	);
 
-	const dispatch = useDispatch();
+	const dispatch: AppDispatch = useDispatch();
 	const theme = themes[themeState];
 
 	const changeTheme = useCallback(() => {
@@ -34,20 +34,15 @@ const NewHeader: React.FC = () => {
 			<Container maxWidth='xl'>
 				<Toolbar disableGutters sx={headerLayoutStyles}>
 					<MobileMenu />
-					<Typography
-						variant='h4'
-						noWrap
-						component='a'
-						sx={logoStyles(theme)}
-					>
+					<Typography variant='h4' noWrap component='a' sx={logoStyles(theme)}>
 						<Link to='/'>{homePage.logo_name}</Link>
 					</Typography>
 					<DesktopMenu />
 					<Button sx={buttonStyles(themeState, theme)} onClick={changeTheme}>
 						{theme.name === ThemeEnum.dark ? (
-							<HiMoon strokeWidth={1} size={20} color={theme.themeIcon} />
+							<DarkMode strokeWidth={1} htmlColor={theme.themeIcon} />
 						) : (
-							<CgSun strokeWidth={1} size={20} color={theme.themeIcon} />
+							<LightMode strokeWidth={1} htmlColor={theme.themeIcon} />
 						)}
 					</Button>
 				</Toolbar>

@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import { Box, Button } from "@mui/material";
-import { NotFoundSVG } from "../../assests/svg/images";
+import { NotFoundSVG } from "../../assets/svg/images";
 import { useNavigate } from "react-router-dom";
 import { notFoundStyles } from "./styles";
 

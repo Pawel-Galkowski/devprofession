@@ -8,7 +8,7 @@ import Projects from "../pages/projects/Projects";
 import Footer from "../components/footer";
 import { Loader } from "../pages/loader";
 import { NotFound } from "../pages/notFound";
-import { ScrollTop } from "../components/scrollTopButton";
+import ScrollTop from "../components/scrollTopButton";
 import NewHeader from "../components/header/header";
 import { Container, Theme } from "@mui/material";
 

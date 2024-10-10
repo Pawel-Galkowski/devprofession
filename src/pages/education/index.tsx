@@ -1,7 +1,7 @@
 import React from "react";
 import Educations from "../../containers/education";
 import Certifications from "../../containers/certifications";
-import { EducationImg } from "../../assests/svg/images";
+import { EducationImg } from "../../assets/svg/images";
 import { Box } from "@mui/material";
 import { basicEducationStyles } from "./styles";
 import TopPageSection from "../../components/topPageSection";

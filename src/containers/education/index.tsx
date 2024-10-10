@@ -11,7 +11,7 @@ import { educationsHeaderStyles, educationStyles } from "./styles";
 
 const Educations: React.FC = () => {
 	const themeState: ThemeEnum = useSelector(
-		(state: ObjectType) => state.theme.value,
+		(state: ObjectType) => state.value,
 	);
 	const theme = themes[themeState];
 

@@ -4,12 +4,14 @@
 /node_modules
 /.pnp
 .pnp.js
+/public/Resume-Pawel-Galkowski-A.pdf
 
 # testing
 /coverage
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store

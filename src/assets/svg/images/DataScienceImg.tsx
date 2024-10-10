@@ -3,9 +3,9 @@ import { useSelector } from "react-redux";
 import { ThemeEnum, themes } from "../../../theme";
 import { ObjectType } from "../../../types";
 
-const DataScienceImg = () => {
+const DataScienceImg: React.FC = () => {
 	const themeState: ThemeEnum = useSelector(
-		(state: ObjectType) => state.theme.value,
+		(state: ObjectType) => state.value,
 	);
 	const theme = themes[themeState];
 	return (

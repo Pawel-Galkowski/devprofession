@@ -1,3 +1,4 @@
+import React from 'react'
 import {
 	CertificationProps,
 	ContactPageDataProps,
@@ -16,7 +17,7 @@ import {
 	INGLogoImg,
 	MicrosoftLogoImg,
 	OpoleUniversityImg,
-} from "./assests/svg/logos";
+} from "./assets/svg/logos";
 import {
 	ReactIcon,
 	NodejsIcon,
@@ -27,8 +28,8 @@ import {
 	CSSIcon,
 	HTMLIcon,
 	JavaScriptIcon,
-} from "./assests/svg/icons";
-import { BackEndImg, FrontEndImg } from "./assests/svg/images";
+} from "./assets/svg/icons";
+import { BackEndImg, FrontEndImg } from "./assets/svg/images";
 
 export const homePage: HomePageProps = {
 	title: "Hello 👋",

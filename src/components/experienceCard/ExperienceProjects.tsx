@@ -18,7 +18,7 @@ export const ExperienceProjects: React.FC<{
 	project: ExperienceProjectsDataProps;
 }> = ({ project }) => {
 	const themeState: ThemeEnum = useSelector(
-		(state: ObjectType) => state.theme.value,
+		(state: ObjectType) => state.value,
 	);
 	const theme = themes[themeState];
 	return (

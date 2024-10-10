@@ -2,7 +2,7 @@ import React from "react";
 import ExperienceAccordion from "../../containers/experienceAccordion";
 import { experience } from "../../data";
 import { Box } from "@mui/material";
-import { ExperienceImg } from "../../assests/svg/images";
+import { ExperienceImg } from "../../assets/svg/images";
 import { experienceMainStyles } from "./styles";
 import TopPageSection from "../../components/topPageSection";
 

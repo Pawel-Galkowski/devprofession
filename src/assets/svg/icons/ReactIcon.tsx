@@ -1,4 +1,6 @@
-const ReactIcon = () => (
+import React from "react";
+
+const ReactIcon: React.FC = () => (
 	<svg
 		aria-label='React'
 		role='img'

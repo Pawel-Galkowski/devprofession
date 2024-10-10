@@ -21,7 +21,7 @@ const ExperienceAccordion: React.FC<{ data: ExperienceDataProps[] }> = ({
 	data,
 }) => {
 	const themeState: ThemeEnum = useSelector(
-		(state: ObjectType) => state.theme.value,
+		(state: ObjectType) => state.value,
 	);
 	const theme = themes[themeState];
 	return (

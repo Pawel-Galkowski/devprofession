@@ -11,22 +11,23 @@ import {
 	Button,
 	CardActions,
 } from "@mui/material";
-import { CertificationProps, ObjectType } from "../../types";
+import { CertificationProps } from "../../types";
 import { cardStyles, imageStyles, subTitleStyles } from "./styles";
 import { Send } from "@mui/icons-material";
+import { RootState } from "../../store";
+
+export const certificationCardTestId = "certificationCardTestId";
 
 const CertificationCard: React.FC<{
 	certificate: CertificationProps;
 }> = ({ certificate }) => {
-	const themeState: ThemeEnum = useSelector(
-		(state: ObjectType) => state.theme.value,
-	);
+	const themeState: ThemeEnum = useSelector((state: RootState) => state.value);
 
 	const theme = themes[themeState];
 
 	return (
 		<Fade duration={2000} direction='up' cascade triggerOnce>
-			<Card sx={cardStyles(themeState)}>
+			<Card sx={cardStyles(themeState)} data-testid={certificationCardTestId}>
 				<Box sx={imageStyles}>{certificate.logo}</Box>
 				<CardContent>
 					<Typography gutterBottom variant='h5'>
