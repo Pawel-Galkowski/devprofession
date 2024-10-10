@@ -14,6 +14,8 @@ import {
 } from "./styles";
 import CustomItemList from "../customItemList";
 
+export const experienceProjectsTestId = "experienceProjects-testId";
+
 export const ExperienceProjects: React.FC<{
 	project: ExperienceProjectsDataProps;
 }> = ({ project }) => {
@@ -22,7 +24,7 @@ export const ExperienceProjects: React.FC<{
 	);
 	const theme = themes[themeState];
 	return (
-		<Box sx={experienceCardBodyStyles}>
+		<Box sx={experienceCardBodyStyles} data-testid={experienceProjectsTestId}>
 			<Box sx={experienceCardInsideHeaderStyles}>
 				<Box sx={experienceCardHeadingLeftStyles}>
 					<Typography variant='h5' sx={experienceCardCompanyStyles(theme)}>

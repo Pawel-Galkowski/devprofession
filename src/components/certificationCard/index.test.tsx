@@ -1,19 +1,19 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import CertificationCard, { certificationCardTestId } from ".";
 import { MicrosoftLogoImg } from "../../assets/svg/logos";
-import "@testing-library/jest-dom";
 import { Provider } from "react-redux";
 import store from "../../store";
+import { microsoftLogoImgTestId } from "../../assets/svg/logos/MicrosoftLogoImg";
 
-describe("test certificationCard", () => {
+describe("test certificationCard component", () => {
 	const certificate = {
-		title: "title",
-		subtitle: "aaa",
+		title: "title text",
+		subtitle: "subtitle text",
 		logo: <MicrosoftLogoImg />,
-		certificate_link: "string",
+		certificate_link: "https://certification.pl/",
 	};
-	beforeAll(() => {
+	beforeEach(() => {
 		render(
 			<Provider store={store}>
 				<CertificationCard certificate={certificate} />
@@ -21,9 +21,20 @@ describe("test certificationCard", () => {
 		);
 	})
 	it('should render component"', () => {
-		expect(screen.getByTestId(certificationCardTestId)).toBeDefined(); // elements are not visible until fade accurs
+		expect(screen.getByTestId(certificationCardTestId)).toBeDefined();
 	});
+	it('should display component text"', () => {
+		expect(screen.getByRole("heading", { name: certificate.title })).toBeDefined();
+		expect(screen.findByText(certificate.subtitle)).toBeDefined();
+	});
+
+	it('should display image', () => {
+		expect(screen.findAllByTestId(microsoftLogoImgTestId)).toBeDefined();
+	})
+
 	it('should have button component"', () => {
-		// expect(screen.getByTestId()).not.toBeNull();
+		const buttonElement = screen.getByText('Open certification');
+		expect(buttonElement).toBeDefined();
+		expect(buttonElement).toHaveProperty('href', certificate.certificate_link)
 	});
 });

@@ -122,7 +122,11 @@ export const durationMobileStyles: SxProps<Theme> = (theme) => ({
 	},
 });
 
-export const buttonLinkStyles = () => ({
-	textDecoration: "none",
-	textAlign: "center",
+export const buttonSectionStyles: SxProps<Theme> = (theme) => ({
+	display: 'flex',
+	justifyContent: 'flex-end',
+	alignItems: 'center',
+	[theme.breakpoints.down("md")]: {
+		alignItems: "center",
+	},
 });

@@ -11,17 +11,17 @@ import {
 	customListStyles,
 } from "./styles";
 
-interface CustomItemListProps {
-	descriptions: string[];
-}
+export const customItemListTestId = "customItemList-testId";
 
-const CustomItemList: React.FC<{ item: CustomItemListProps }> = ({ item }) => {
-	const themeState: ThemeEnum = useSelector(
-		(state: ObjectType) => state.value,
-	);
+const CustomItemList: React.FC<{
+	item: {
+		descriptions: string[];
+	};
+}> = ({ item }) => {
+	const themeState: ThemeEnum = useSelector((state: ObjectType) => state.value);
 	const theme = themes[themeState];
 	return (
-		<List sx={customListStyles}>
+		<List sx={customListStyles} data-testid={customItemListTestId}>
 			{item.descriptions.map((skillSentence: string) => (
 				<ListItem
 					style={itemListStyles(theme)}

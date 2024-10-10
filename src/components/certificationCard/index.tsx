@@ -5,7 +5,6 @@ import { ThemeEnum, themes } from "../../theme";
 import {
 	Box,
 	CardContent,
-	Link,
 	Typography,
 	Card,
 	Button,
@@ -16,7 +15,7 @@ import { cardStyles, imageStyles, subTitleStyles } from "./styles";
 import { Send } from "@mui/icons-material";
 import { RootState } from "../../store";
 
-export const certificationCardTestId = "certificationCardTestId";
+export const certificationCardTestId = "certificationCard-testId";
 
 const CertificationCard: React.FC<{
 	certificate: CertificationProps;
@@ -24,7 +23,6 @@ const CertificationCard: React.FC<{
 	const themeState: ThemeEnum = useSelector((state: RootState) => state.value);
 
 	const theme = themes[themeState];
-
 	return (
 		<Fade duration={2000} direction='up' cascade triggerOnce>
 			<Card sx={cardStyles(themeState)} data-testid={certificationCardTestId}>
@@ -38,11 +36,14 @@ const CertificationCard: React.FC<{
 					</Typography>
 				</CardContent>
 				<CardActions>
-					<Link href={certificate.certificate_link}>
-						<Button size='small' endIcon={<Send />}>
-							Open certification
-						</Button>
-					</Link>
+					<Button
+						size='small'
+						endIcon={<Send />}
+						href={certificate.certificate_link}
+						target="_blank"
+					>
+						Open certification
+					</Button>
 				</CardActions>
 			</Card>
 		</Fade>

@@ -54,7 +54,7 @@ export interface ExperienceProjectsDataProps {
 	technologies: string;
 }
 
-interface ExperienceDataWithProjects {
+export interface ExperienceDataWithProjects {
 	title: string;
 	company: string;
 	company_url: string;

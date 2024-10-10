@@ -24,16 +24,17 @@ import {
 } from "./styles";
 import CustomItemList from "../customItemList";
 
+export const experienceCardTestId = "experienceCard-testId";
+export const expCardNoProjectsPropTestId = "expCardNoProjectsProp-testId";
+
 const ExperienceCard: React.FC<{ children: ExperienceDataProps }> = ({
 	children,
 }) => {
-	const themeState: ThemeEnum = useSelector(
-		(state: ObjectType) => state.value,
-	);
+	const themeState: ThemeEnum = useSelector((state: ObjectType) => state.value);
 	const theme = themes[themeState];
 
 	return (
-		<Box sx={experienceCardStyles(theme)}>
+		<Box sx={experienceCardStyles(theme)} data-testid={experienceCardTestId}>
 			<Box sx={experienceLogStyles}>{children.logo}</Box>
 			<Box sx={experienceCardBodyStyles}>
 				<Box sx={experienceCardHeaderStyles}>
@@ -67,14 +68,14 @@ const ExperienceCard: React.FC<{ children: ExperienceDataProps }> = ({
 							<ExperienceProjects project={item} key={uuidv4()} />
 						))
 					) : (
-						<>
+						<Box data-testid={expCardNoProjectsPropTestId}>
 							<CustomItemList item={children} />
 							<Box sx={technologiesSectionStyles}>
 								<Typography variant='body2'>
 									Technologies & Frameworks: {children.technologies}
 								</Typography>
 							</Box>
-						</>
+						</Box>
 					)}
 				</Box>
 			</Box>

@@ -16,18 +16,18 @@ import {
 	degreeCardStyles,
 	durationDesktopStyles,
 	durationMobileStyles,
-	buttonLinkStyles,
+	buttonSectionStyles,
 } from "./styles";
 import CustomItemList from "../customItemList";
 
+export const degreeCardTestId = "degreeCard-testId";
+
 const DegreeCard: React.FC<{ degree: DegreeProps }> = ({ degree }) => {
-	const themeState: ThemeEnum = useSelector(
-		(state: ObjectType) => state.value,
-	);
+	const themeState: ThemeEnum = useSelector((state: ObjectType) => state.value);
 	const theme = themes[themeState];
 
 	return (
-		<Box sx={degreeCardStyles}>
+		<Box sx={degreeCardStyles} data-testid={degreeCardTestId}>
 			<Flip direction='vertical' duration={2000} triggerOnce>
 				<Box sx={imgStyles(theme)}>{degree.logo}</Box>
 			</Flip>
@@ -52,20 +52,17 @@ const DegreeCard: React.FC<{ degree: DegreeProps }> = ({ degree }) => {
 						</Box>
 						<CustomItemList item={degree} />
 					</Box>
-					<Link
-						href={degree.website_link}
-						target='_blank'
-						rel='noopener noreferrer'
-						sx={buttonLinkStyles}
-					>
+					<Box sx={buttonSectionStyles}>
 						<Button
 							sx={visitButtonStyles(theme)}
 							size='large'
 							variant='contained'
+							href={degree.website_link}
+							target='_blank'
 						>
 							Visit Website
 						</Button>
-					</Link>
+					</Box>
 				</Box>
 			</Fade>
 		</Box>

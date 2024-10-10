@@ -130,7 +130,7 @@ export const certifications: CertificationProps[] = [
 		title: "AZ-900",
 		subtitle: "Microsoft Certified",
 		logo: <MicrosoftLogoImg />,
-		certificate_link: "",
+		certificate_link: "itgalkowski.pl",
 	},
 ];
 
