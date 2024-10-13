@@ -16,6 +16,8 @@ import {
 } from "./styles";
 import CustomItemList from "../../components/customItemList";
 
+export const skillSectionContainerTestId = 'skillSectionContainer-testId'
+
 const SkillSection: React.FC = () => {
 	const themeState: ThemeEnum = useSelector(
 		(state: ObjectType) => state.value,
@@ -27,7 +29,7 @@ const SkillSection: React.FC = () => {
 		index % 2 === 0 ? "left" : "right";
 
 	return (
-		<Box sx={skillsTwoLayersLayoutStyles}>
+		<Box sx={skillsTwoLayersLayoutStyles} data-testid={skillSectionContainerTestId}>
 			{skills.map((item: SkillsProps, index) => (
 				<Box sx={skillsImgSectionStyles(index % 2 === 0)} key={uuidv4()}>
 					<Fade

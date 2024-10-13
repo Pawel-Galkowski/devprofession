@@ -7,8 +7,10 @@ import { basicEducationStyles } from "./styles";
 import TopPageSection from "../../components/topPageSection";
 import { educationData } from "../../data";
 
+export const educationTestId = "education-testId";
+
 const Education: React.FC = () => (
-	<Box sx={basicEducationStyles}>
+	<Box sx={basicEducationStyles} data-testid={educationTestId}>
 		<TopPageSection
 			title={educationData.title}
 			subTitle={educationData.subtitle}

@@ -22,6 +22,8 @@ interface TopPageSectionProps {
 	additionalElements?: JSX.Element[];
 }
 
+export const topPageSectionTestId = 'topPageSection-testId'
+
 const TopPageSection: React.FC<TopPageSectionProps> = ({
 	title,
 	subTitle,
@@ -35,7 +37,7 @@ const TopPageSection: React.FC<TopPageSectionProps> = ({
 	const theme = themes[themeState];
 
 	return (
-		<Box sx={topPageStyles}>
+		<Box sx={topPageStyles} data-testid={topPageSectionTestId}>
 			<Fade duration={2000} direction='left' triggerOnce>
 				<Box sx={topPageImageStyles}>{image}</Box>
 			</Fade>

@@ -20,6 +20,8 @@ import { ThemeEnum, themes } from "../../theme";
 import { ObjectType } from "../../types";
 import { useSelector } from "react-redux";
 
+export const homePageTestId = "homePage-testId";
+
 const Home: React.FC = () => {
 	const themeState: ThemeEnum = useSelector(
 		(state: ObjectType) => state.value,
@@ -27,7 +29,7 @@ const Home: React.FC = () => {
 	const theme = themes[themeState];
 
 	return (
-		<Box sx={homePageStyles}>
+		<Box sx={homePageStyles} data-testid={homePageTestId}>
 			<Box sx={homePageHeaderStyles}>
 				<Box sx={informationBoxStyles}>
 					<Fade duration={2000} direction='left' triggerOnce>

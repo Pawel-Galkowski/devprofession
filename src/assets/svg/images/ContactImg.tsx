@@ -3,13 +3,15 @@ import { useSelector } from "react-redux";
 import { ThemeEnum, themes } from "../../../theme";
 import { ObjectType } from "../../../types";
 
+export const contactImgTestId = 'contactImg-testId'
+
 const ContactImg: React.FC = () => {
 	const themeState: ThemeEnum = useSelector(
 		(state: ObjectType) => state.value,
 	);
 	const theme = themes[themeState];
 	return (
-		<svg version='1.2' width='100%' height='100%' viewBox='300 300 3010 3010'>
+		<svg version='1.2' width='100%' height='100%' viewBox='300 300 3010 3010' data-testid={contactImgTestId}>
 			<g>
 				<path
 					fill={theme.secondaryText}

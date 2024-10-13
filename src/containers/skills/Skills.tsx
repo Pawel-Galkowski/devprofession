@@ -7,13 +7,15 @@ import { Box, Typography } from "@mui/material";
 import { ObjectType } from "../../types";
 import { mainSkillsStyles, skillsHeaderStyles } from "./styles";
 
+export const skillsContainerTestId = 'skillsContainer-testId'
+
 const Skills: React.FC = () => {
 	const themeState: ThemeEnum = useSelector(
 		(state: ObjectType) => state.value,
 	);
 	const theme = themes[themeState];
 	return (
-		<Box sx={mainSkillsStyles}>
+		<Box sx={mainSkillsStyles} data-testid={skillsContainerTestId}>
 			<Fade duration={2000} direction='down' triggerOnce>
 				<Typography sx={skillsHeaderStyles(theme)} variant="h2">
 					Here&apos;s what I do

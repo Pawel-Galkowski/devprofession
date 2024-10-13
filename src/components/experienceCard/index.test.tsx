@@ -30,7 +30,7 @@ describe("test experienceCard component", () => {
 		it('should display component text"', () => {
 			expect(
 				screen.queryAllByRole("heading", { name: experienceWithProjects.title }).length,
-			).toBeGreaterThanOrEqual(1);;
+			).toBeGreaterThanOrEqual(1);
 			expect(
 				screen.getByRole("link", { name: experienceWithProjects.company }),
 			).toBeDefined();

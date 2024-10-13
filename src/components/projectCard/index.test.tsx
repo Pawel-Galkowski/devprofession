@@ -29,7 +29,6 @@ describe("test ProjectCard component", () => {
 
 	it('should display buttons"', () => {
 		const cardComponent: HTMLElement = screen.getByTestId(projectCardTestId);
-		// screen.debug();
 		const buttonComponentList = cardComponent.querySelectorAll("a");
 		expect(buttonComponentList.length).toBe(2);
 		expect(buttonComponentList[0].innerHTML).toBe("Github");

@@ -16,12 +16,14 @@ export interface RequiredSocialMediaProps {
 	gmail?: boolean;
 }
 
+export const socialMediaTestId = 'socialMedia-testId'
+
 const SocialMedia: React.FC<RequiredSocialMediaProps> = ({
 	github,
 	linkedin,
 	gmail,
 }) => (
-	<Box sx={socialMediaStyles}>
+	<Box sx={socialMediaStyles} data-testid={socialMediaTestId}>
 		{github && (
 			<Link
 				href={socialMediaLinks.github}

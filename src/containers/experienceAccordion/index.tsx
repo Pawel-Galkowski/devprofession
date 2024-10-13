@@ -17,6 +17,8 @@ import {
 import { useSelector } from "react-redux";
 import { ThemeEnum, themes } from "../../theme";
 
+export const experienceAccordionContainerTestId = 'experienceAccordionContainer-testId'
+
 const ExperienceAccordion: React.FC<{ data: ExperienceDataProps[] }> = ({
 	data,
 }) => {
@@ -25,7 +27,7 @@ const ExperienceAccordion: React.FC<{ data: ExperienceDataProps[] }> = ({
 	);
 	const theme = themes[themeState];
 	return (
-		<Box sx={experienceAccordStyles}>
+		<Box sx={experienceAccordStyles} data-testid={experienceAccordionContainerTestId}>
 			{data.map((item: ExperienceDataProps, index) => (
 				<Accordion
 					key={uuidv4()}

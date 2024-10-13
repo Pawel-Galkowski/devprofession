@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import { ThemeEnum, themes } from "../../../theme";
 import { ObjectType } from "../../../types";
 
+export const notFoundSVGTestId = "notFoundSVG-testId";
+
 const NotFoundSVG: React.FC = () => {
 	const themeState: ThemeEnum = useSelector(
 		(state: ObjectType) => state.value,
@@ -11,7 +13,7 @@ const NotFoundSVG: React.FC = () => {
 	const theme = themes[themeState];
 
 	return (
-		<svg width="100%" height="100%" viewBox='0 0 1920 1080'>
+		<svg width="100%" height="100%" viewBox='0 0 1920 1080' data-testid={notFoundSVGTestId}>
 			<title>404</title>
 			<g id='Layer_12 yellow-back-fig' data-name='Layer 12'>
 				<path

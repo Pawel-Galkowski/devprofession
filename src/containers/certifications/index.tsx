@@ -9,6 +9,8 @@ import { CertificationProps, ObjectType } from "../../types";
 import { v4 as uuidv4 } from "uuid";
 import { certificationHeaderStyles, certificationBodyStyles, certificationStyles } from "./styles";
 
+export const certificationsContainerTestId = "certificationsContainer-testId";
+
 const Certifications: React.FC = () => {
 	const themeState: ThemeEnum = useSelector(
 		(state: ObjectType) => state.value,
@@ -16,7 +18,7 @@ const Certifications: React.FC = () => {
 	const theme = themes[themeState];
 
 	return (
-		<Box sx={certificationStyles}>
+		<Box sx={certificationStyles} data-testid={certificationsContainerTestId}>
 			<Fade duration={2000} direction='down' triggerOnce>
 				<Typography variant='h4' sx={certificationHeaderStyles(theme)}>
 					Certifications

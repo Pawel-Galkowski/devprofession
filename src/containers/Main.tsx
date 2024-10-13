@@ -4,12 +4,12 @@ import Home from "../pages/home";
 import Education from "../pages/education";
 import Experience from "../pages/experience";
 import Contact from "../pages/contact";
-import Projects from "../pages/projects/Projects";
+import Projects from "../pages/projects";
 import Footer from "../components/footer";
-import { Loader } from "../pages/loader";
-import { NotFound } from "../pages/notFound";
+import Loader from "../components/loader";
+import NotFound from "../pages/notFound";
 import ScrollTop from "../components/scrollTopButton";
-import NewHeader from "../components/header/header";
+import Header from "../components/header/header";
 import { Container, Theme } from "@mui/material";
 
 const mainContentStyles = (theme: Theme) => ({
@@ -34,7 +34,7 @@ const Main: React.FC = () => {
 		<Loader />
 	) : (
 		<BrowserRouter>
-			<NewHeader />
+			<Header />
 			<Container sx={mainContentStyles} maxWidth='lg'>
 				<Routes>
 					<Route path='/' element={<Home />} />

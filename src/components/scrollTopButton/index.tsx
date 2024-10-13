@@ -7,10 +7,11 @@ import { useSelector } from "react-redux";
 import { ObjectType } from "../../types";
 import { arrowStyle, fabStyle, positionBoxStyle } from "./styles";
 
+export const scrollTopButtonTestId = "scrollTopButton-testId";
+export const keyboardArrowUpTestId = "keyboardArrowUp-testId";
+
 const scrollTopButton: React.FC = () => {
-	const themeState: ThemeEnum = useSelector(
-		(state: ObjectType) => state.value,
-	);
+	const themeState: ThemeEnum = useSelector((state: ObjectType) => state.value);
 
 	const theme = themes[themeState];
 	const trigger = useScrollTrigger({
@@ -32,9 +33,14 @@ const scrollTopButton: React.FC = () => {
 
 	return (
 		<Fade in={trigger}>
-			<Box onClick={handleClick} role='presentation' sx={positionBoxStyle}>
+			<Box
+				onClick={handleClick}
+				role='presentation'
+				sx={positionBoxStyle}
+				data-testid={scrollTopButtonTestId}
+			>
 				<Fab size='medium' aria-label='scroll back to top' sx={fabStyle(theme)}>
-					<KeyboardArrowUp sx={arrowStyle(theme)} />
+					<KeyboardArrowUp sx={arrowStyle(theme)} data-testid={keyboardArrowUpTestId} />
 				</Fab>
 			</Box>
 		</Fade>

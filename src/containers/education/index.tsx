@@ -9,6 +9,8 @@ import { DegreeProps, ObjectType } from "../../types";
 import { v4 as uuidv4 } from "uuid";
 import { educationsHeaderStyles, educationStyles } from "./styles";
 
+export const educationsContainerTestId = "educationsContainer-testId";
+
 const Educations: React.FC = () => {
 	const themeState: ThemeEnum = useSelector(
 		(state: ObjectType) => state.value,
@@ -16,7 +18,7 @@ const Educations: React.FC = () => {
 	const theme = themes[themeState];
 
 	return (
-		<Box sx={educationStyles}>
+		<Box sx={educationStyles} data-testid={educationsContainerTestId}>
 			<Fade duration={2000} direction='down' triggerOnce>
 				<Typography variant="h2" sx={educationsHeaderStyles(theme)}>
 					Degrees Received

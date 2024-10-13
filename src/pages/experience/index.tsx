@@ -6,8 +6,10 @@ import { ExperienceImg } from "../../assets/svg/images";
 import { experienceMainStyles } from "./styles";
 import TopPageSection from "../../components/topPageSection";
 
+export const experiencePageTestId = "experiencePage-testId";
+
 const Experience: React.FC = () => (
-	<Box sx={experienceMainStyles}>
+	<Box sx={experienceMainStyles} data-testid={experiencePageTestId}>
 		<TopPageSection
 			title={experience.title}
 			subTitle={experience.subtitle}
