@@ -18,9 +18,7 @@ import { Link } from "react-router-dom";
 import { AppDispatch } from "../../store";
 
 const NewHeader: React.FC = () => {
-	const themeState: ThemeEnum = useSelector(
-		(state: ObjectType) => state.value,
-	);
+	const themeState: ThemeEnum = useSelector((state: ObjectType) => state.value);
 
 	const dispatch: AppDispatch = useDispatch();
 	const theme = themes[themeState];
@@ -34,8 +32,14 @@ const NewHeader: React.FC = () => {
 			<Container maxWidth='xl'>
 				<Toolbar disableGutters sx={headerLayoutStyles}>
 					<MobileMenu />
-					<Typography variant='h4' noWrap component='a' sx={logoStyles(theme)}>
-						<Link to='/'>{homePage.logo_name}</Link>
+					<Typography
+						variant='h4'
+						noWrap
+						component={Link}
+						sx={logoStyles(theme)}
+						to='/'
+					>
+						{homePage.logo_name}
 					</Typography>
 					<DesktopMenu />
 					<Button sx={buttonStyles(themeState, theme)} onClick={changeTheme}>

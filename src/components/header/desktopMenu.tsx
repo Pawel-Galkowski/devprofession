@@ -15,39 +15,47 @@ import {
 } from "./styles";
 import { Link } from "react-router-dom";
 
+export const desktopMenuTestId = "desktopMenu-testId";
+
 const DesktopMenu: React.FC = () => {
-	const themeState: ThemeEnum = useSelector(
-		(state: ObjectType) => state.value,
-	);
+	const themeState: ThemeEnum = useSelector((state: ObjectType) => state.value);
 
 	const theme = themes[themeState];
 
 	return (
-		<Box sx={desktopMenuStyles}>
-			<MenuItem sx={[menuItemStyles, homeLinkStyles]}>
-				<Link to='/' style={menuLinkItemStyles(theme)}>
-					Home
-				</Link>
+		<Box sx={desktopMenuStyles} data-testid={desktopMenuTestId}>
+			<MenuItem sx={[menuItemStyles, homeLinkStyles]} component={Link} to='/'>
+				<Box style={menuLinkItemStyles(theme)}>Home</Box>
 			</MenuItem>
-			<MenuItem sx={[menuItemStyles, educationLinkStyles]}>
-				<Link to='/education' style={menuLinkItemStyles(theme)}>
+			<MenuItem
+				sx={[menuItemStyles, educationLinkStyles]}
+				component={Link}
+				to='/education'
+			>
+				<Box style={menuLinkItemStyles(theme)}>
 					Education and Certifications
-				</Link>
+				</Box>
 			</MenuItem>
-			<MenuItem sx={[menuItemStyles, experienceLinkStyles]}>
-				<Link to='/experience' style={menuLinkItemStyles(theme)}>
-					Experience
-				</Link>
+			<MenuItem
+				sx={[menuItemStyles, experienceLinkStyles]}
+				component={Link}
+				to='/experience'
+			>
+				<Box style={menuLinkItemStyles(theme)}>Experience</Box>
 			</MenuItem>
-			<MenuItem sx={[menuItemStyles, projectsLinkStyles]}>
-				<Link to='/projects' style={menuLinkItemStyles(theme)}>
-					Projects
-				</Link>
+			<MenuItem
+				sx={[menuItemStyles, projectsLinkStyles]}
+				component={Link}
+				to='/projects'
+			>
+				<Box style={menuLinkItemStyles(theme)}>Projects</Box>
 			</MenuItem>
-			<MenuItem sx={[menuItemStyles, contactLinkStyles]}>
-				<Link to='/contact' style={menuLinkItemStyles(theme)}>
-					Contact and Resume
-				</Link>
+			<MenuItem
+				sx={[menuItemStyles, contactLinkStyles]}
+				component={Link}
+				to='/contact'
+			>
+				<Box style={menuLinkItemStyles(theme)}>Contact and Resume</Box>
 			</MenuItem>
 		</Box>
 	);

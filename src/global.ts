@@ -1,4 +1,6 @@
-export const globalStyles = (theme: Record<string, string>) => ({
+import { LocalTheme } from "./theme";
+
+export const globalStyles = (theme: LocalTheme) => ({
 	"*, *::before, *::after": {
 		boxSizing: "border-box",
 	},
@@ -15,7 +17,6 @@ export const globalStyles = (theme: Record<string, string>) => ({
 
 	html: {
 		scrollBehavior: "smooth",
-		overflowY: "scroll",
 		overflowX: "hidden",
 	},
 

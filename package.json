@@ -9,7 +9,7 @@
 		"build:dev": "webpack --mode=development",
 		"build:prod": "webpack --mode=production --node-env=production",
 		"test": "jest --coverage",
-		"test:watch": "jest --watch --coverage",
+		"test:watch": "jest --watchAll --coverage",
 		"eject": "react-scripts eject",
 		"lint": "npx eslint .",
 		"lint:fix": "npx eslint . --fix",

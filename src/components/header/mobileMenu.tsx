@@ -10,6 +10,7 @@ import {
 	experienceLinkStyles,
 	homeLinkStyles,
 	menuItemStyles,
+	menuLinkItemStyles,
 	menuMobileLinkItemStyles,
 	mobileMenuBoxStyles,
 	mobileMenuExitIconStyles,
@@ -20,9 +21,7 @@ import {
 import { Link } from "react-router-dom";
 
 const MobileMenu: React.FC = () => {
-	const themeState: ThemeEnum = useSelector(
-		(state: ObjectType) => state.value,
-	);
+	const themeState: ThemeEnum = useSelector((state: ObjectType) => state.value);
 
 	const theme = themes[themeState];
 
@@ -64,46 +63,48 @@ const MobileMenu: React.FC = () => {
 					>
 						<Close htmlColor='#fff' />
 					</IconButton>
-					<Link to='/' style={menuMobileLinkItemStyles(theme)}>
-						<MenuItem
-							sx={[menuItemStyles, homeLinkStyles]}
-							onClick={handleCloseNavMenu}
-						>
-							Home
-						</MenuItem>
-					</Link>
-					<Link to='/education' style={menuMobileLinkItemStyles(theme)}>
-						<MenuItem
-							sx={[menuItemStyles, educationLinkStyles]}
-							onClick={handleCloseNavMenu}
-						>
+					<MenuItem
+						sx={[menuItemStyles, homeLinkStyles]}
+						onClick={handleCloseNavMenu}
+						component={Link}
+						to='/'
+					>
+						<Box style={menuLinkItemStyles(theme)}>Home</Box>
+					</MenuItem>
+					<MenuItem
+						sx={[menuItemStyles, educationLinkStyles]}
+						onClick={handleCloseNavMenu}
+						component={Link}
+						to='/education'
+					>
+						<Box style={menuLinkItemStyles(theme)}>
 							Education and Certifications
-						</MenuItem>
-					</Link>
-					<Link to='/experience' style={menuMobileLinkItemStyles(theme)}>
-						<MenuItem
-							sx={[menuItemStyles, experienceLinkStyles]}
-							onClick={handleCloseNavMenu}
-						>
-							Experience
-						</MenuItem>
-					</Link>
-					<Link to='/projects' style={menuMobileLinkItemStyles(theme)}>
-						<MenuItem
-							sx={[menuItemStyles, projectsLinkStyles]}
-							onClick={handleCloseNavMenu}
-						>
-							Projects
-						</MenuItem>
-					</Link>
-					<Link to='/contact' style={menuMobileLinkItemStyles(theme)}>
-						<MenuItem
-							sx={[menuItemStyles, contactLinkStyles]}
-							onClick={handleCloseNavMenu}
-						>
-							Contact and Resume
-						</MenuItem>
-					</Link>
+						</Box>
+					</MenuItem>
+					<MenuItem
+						sx={[menuItemStyles, experienceLinkStyles]}
+						onClick={handleCloseNavMenu}
+						component={Link}
+						to='/experience'
+					>
+						<Box style={menuLinkItemStyles(theme)}>Experience</Box>
+					</MenuItem>
+					<MenuItem
+						sx={[menuItemStyles, projectsLinkStyles]}
+						onClick={handleCloseNavMenu}
+						component={Link}
+						to='/projects'
+					>
+						<Box style={menuLinkItemStyles(theme)}>Projects</Box>
+					</MenuItem>
+					<MenuItem
+						sx={[menuItemStyles, contactLinkStyles]}
+						onClick={handleCloseNavMenu}
+						component={Link}
+						to='/contact'
+					>
+						<Box style={menuLinkItemStyles(theme)}>Contact and Resume</Box>
+					</MenuItem>
 				</Box>
 			</Modal>
 		</Box>
