@@ -48,7 +48,7 @@ describe("test SocialMedia component", () => {
 		});
 	});
 
-    describe("social media with only specific link", () => {
+    describe("social media with only specific link - linkedin", () => {
 		beforeEach(() => {
 			render(
 				<Provider store={store}>
@@ -63,6 +63,25 @@ describe("test SocialMedia component", () => {
 
             expect(socialMediaElement.children[0])
             expect(socialMediaElement.children[0]).toHaveProperty("href", socialMediaLinks.linkedin);
+            expect(socialMediaElement.children[0]).toHaveProperty("target", "_blank");
+		});
+	});
+
+	describe("social media with only specific link - github", () => {
+		beforeEach(() => {
+			render(
+				<Provider store={store}>
+					<SocialMedia github />
+				</Provider>,
+			);
+		});
+		it('should have only linkedin link"', () => {
+			const socialMediaElement = screen.getByTestId(socialMediaTestId);
+			expect(socialMediaElement).toBeDefined();
+			expect(socialMediaElement.children.length).toBe(1);
+
+            expect(socialMediaElement.children[0])
+            expect(socialMediaElement.children[0]).toHaveProperty("href", socialMediaLinks.github);
             expect(socialMediaElement.children[0]).toHaveProperty("target", "_blank");
 		});
 	});

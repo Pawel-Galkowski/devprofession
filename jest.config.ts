@@ -20,8 +20,9 @@ const config: Config = {
 		"./src/utils/intersectionObserverMock",
 	],
 	collectCoverageFrom: [
-		"src/{pages, containers, components}/*.{ts,tsx}",
-		"src/{App, index}.tsx",
+		"src/{pages,containers,components}/*.{ts,tsx}",
+		"src/{pages,containers,components}/**/*.{ts,tsx}",
+		"src/App.tsx",
 		"!**/styles.ts",
 		'!**/types.*'
 	],

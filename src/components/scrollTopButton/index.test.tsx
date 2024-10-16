@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import ScrollTopButton, { keyboardArrowUpTestId, scrollTopButtonTestId } from ".";
 import { Provider } from "react-redux";
 import store from "../../store";

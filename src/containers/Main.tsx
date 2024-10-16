@@ -19,6 +19,8 @@ const mainContentStyles = (theme: Theme) => ({
 	},
 });
 
+export const mainTestId = "main-testId";
+
 const Main: React.FC = () => {
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -33,7 +35,7 @@ const Main: React.FC = () => {
 	return isLoading ? (
 		<Loader />
 	) : (
-		<BrowserRouter>
+		<BrowserRouter data-testid={mainTestId}>
 			<Header />
 			<Container sx={mainContentStyles} maxWidth='lg'>
 				<Routes>

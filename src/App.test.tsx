@@ -1,33 +1,39 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
-import configureMockStore from "redux-mock-store";
-import store from "./store";
 import App from "./App";
 import { ThemeEnum, themes } from "./theme";
-import { setDarkTheme } from "./reducers/themeReducer";
+import { setLightTheme } from "./reducers/themeReducer";
 import { footerTestId } from "./components/footer";
 import { changeRgbToHexFunction } from "./utils/testUtils";
-
-const mockStore = configureMockStore();
+import store from "./store";
 
 describe("test App component", () => {
-	const mockedStore = mockStore({ value: ThemeEnum.dark });
+	const RenderElement = () => (
+		<Provider store={store}>
+			<App />
+		</Provider>
+	);
+	let rerenderElement: (ui: React.ReactNode) => void;
 	beforeEach(() => {
-		render(
-			<Provider store={mockedStore}>
-				<App />
-			</Provider>
-		);
+		const { rerender } = render(<RenderElement />);
+		rerenderElement = rerender;
 	});
-	it('should load dark theme"', () => {
+	it('should load theme"', async () => {
 		const footer = screen.getByTestId(footerTestId);
 		expect(footer).toBeDefined();
 
-		// mockedStore.dispatch(setDarkTheme());
-        console.error(getComputedStyle(footer))
 		expect(changeRgbToHexFunction(getComputedStyle(footer).color)).toBe(
-			themes["dark"].secondaryText
+			themes[ThemeEnum.dark].secondaryText.toLowerCase()
+		);
+
+		await act(async () => {
+			store.dispatch(setLightTheme());
+			rerenderElement(<RenderElement />);
+		});
+
+		expect(changeRgbToHexFunction(getComputedStyle(footer).color)).toBe(
+			themes[ThemeEnum.light].secondaryText.toLowerCase()
 		);
 	});
 });
