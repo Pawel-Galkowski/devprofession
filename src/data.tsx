@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
 	CertificationProps,
 	ContactPageDataProps,
@@ -28,6 +28,13 @@ import {
 	CSSIcon,
 	HTMLIcon,
 	JavaScriptIcon,
+	TypeScriptIcon,
+	NextIcon,
+	VueIcon,
+	AngularIcon,
+	PHPIcon,
+	WebpackIcon,
+	JestIcon,
 } from "./assets/svg/icons";
 import { BackEndImg, FrontEndImg } from "./assets/svg/images";
 
@@ -238,7 +245,6 @@ export const contactPageData: ContactPageDataProps = {
 export const projects: ProjectsProps[] = [
 	{
 		name: "Recruitment Platform",
-		url: "https://github.com/Pawel-Galkowski/Recruitment-Platform--OLD-Version",
 		description:
 			"Bachelor degree project completely created by me. Includes roles of client, recruiter and admin. Have posibility to publish new offer, edit information and view it from client side. You can add information about yourself, edit it and everything (public) can be maintained by admin (remove/add users, post and other information).",
 		technologies: [
@@ -267,6 +273,160 @@ export const projects: ProjectsProps[] = [
 			github:
 				"https://github.com/Pawel-Galkowski/Recruitment-Platform--OLD-Version",
 			live: "https://joinjobs.herokuapp.com/",
+		},
+	},
+	{
+		name: "Devprofession Page",
+		description: "Portfolio page created with react on webpack",
+		technologies: [
+			{
+				name: "HTML5",
+				icon: <HTMLIcon />,
+			},
+			{
+				name: "CSS3",
+				icon: <CSSIcon />,
+			},
+			{
+				name: "React",
+				icon: <ReactIcon />,
+			},
+			{
+				name: "Webpack",
+				icon: <WebpackIcon />,
+			},
+			{
+				name: "Jest",
+				icon: <JestIcon />,
+			},
+		],
+		links: {
+			github: "https://github.com/Pawel-Galkowski/devprofession",
+			live: "https://devprofession.pl/",
+		},
+	},
+	{
+		name: "ITGalkowski Page",
+		description: "Previous portfolio page created with wordpress",
+		technologies: [
+			{
+				name: "HTML5",
+				icon: <HTMLIcon />,
+			},
+			{
+				name: "CSS3",
+				icon: <CSSIcon />,
+			},
+			{
+				name: "Wordpress",
+				icon: <WordpressIcon />,
+			},
+			{
+				name: "PHP",
+				icon: <PHPIcon />,
+			},
+		],
+		links: {
+			live: "https://itgalkowski.pl",
+		},
+	},
+	{
+		name: "Restaurant Page",
+		description: "Restaurant page created via Angular",
+		technologies: [
+			{
+				name: "HTML5",
+				icon: <HTMLIcon />,
+			},
+			{
+				name: "CSS3",
+				icon: <CSSIcon />,
+			},
+			{
+				name: "Angular",
+				icon: <AngularIcon />,
+			},
+			{
+				name: "TypeScript",
+				icon: <TypeScriptIcon />,
+			},
+		],
+		links: {
+			github: "https://github.com/Pawel-Galkowski/Restaurant-Page",
+			live: "https://pawel-galkowski.github.io/Restaurant-Page/",
+		},
+	},
+	{
+		name: "Weather App",
+		description:
+			"Weather app built with Vue, includes weather data from open API and provides background image from selected location",
+		technologies: [
+			{
+				name: "HTML5",
+				icon: <HTMLIcon />,
+			},
+			{
+				name: "CSS3",
+				icon: <CSSIcon />,
+			},
+			{
+				name: "Vue",
+				icon: <VueIcon />,
+			},
+		],
+		links: {
+			github: "https://github.com/Pawel-Galkowski/Weather-App",
+			live: "https://pawel-galkowski.github.io/Weather-App",
+		},
+	},
+	{
+		name: "Future cars toyota Page",
+		description:
+			"Basic page created with HTML and CSS from a free online design image",
+		technologies: [
+			{
+				name: "HTML5",
+				icon: <HTMLIcon />,
+			},
+			{
+				name: "CSS3",
+				icon: <CSSIcon />,
+			},
+			{
+				name: "JavaScript",
+				icon: <JavaScriptIcon />,
+			},
+		],
+		links: {
+			github: "https://github.com/Pawel-Galkowski/future-cars-toyota",
+			live: "https://pawel-galkowski.github.io/future-cars-toyota/",
+		},
+	},
+	{
+		name: "Nextjs-blog",
+		description:
+			"Next.js blog project created as a small example of using next.js functionality",
+		technologies: [
+			{
+				name: "HTML5",
+				icon: <HTMLIcon />,
+			},
+			{
+				name: "CSS3",
+				icon: <CSSIcon />,
+			},
+			{
+				name: "TypeScript",
+				icon: <TypeScriptIcon />,
+			},
+			{
+				name: "Next.JS",
+				icon: <NextIcon />,
+			},
+		],
+		links: {
+			github: "https://github.com/Pawel-Galkowski/nextjs-blog",
+			live: "https://pawel-galkowski.github.io/nextjs-blog/",
 		},
 	},
 ];

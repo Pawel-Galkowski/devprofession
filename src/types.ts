@@ -109,13 +109,12 @@ export interface ProjectTechnologiesProps {
 }
 
 export interface ProjectsLinksProps {
-	github: string;
-	live: string;
+	github?: string;
+	live?: string;
 }
 
 export interface ProjectsProps {
 	name: string;
-	url: string;
 	description: string;
 	technologies: ProjectTechnologiesProps[];
 	links: ProjectsLinksProps;

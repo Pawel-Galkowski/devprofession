@@ -50,22 +50,26 @@ const ProjectCard: React.FC<{ repo: ProjectsProps }> = ({ repo }) => {
 						</List>
 					</Box>
 					<Box sx={actionButonsSectionStyles}>
-						<Button
-							variant='contained'
-							sx={{ backgroundColor: theme.bikeColor }}
-							href={repo.links.github}
-							target='_blank'
-						>
-							Github
-						</Button>
-						<Button
-							variant='contained'
-							sx={{ backgroundColor: theme.darkNumberColor }}
-							href={repo.links.live}
-							target='_blank'
-						>
-							Live
-						</Button>
+						{repo.links.github && (
+							<Button
+								variant='contained'
+								sx={{ backgroundColor: theme.bikeColor }}
+								href={repo.links.github}
+								target='_blank'
+							>
+								Github
+							</Button>
+						)}
+						{repo.links.live && (
+							<Button
+								variant='contained'
+								sx={{ backgroundColor: theme.darkNumberColor }}
+								href={repo.links.live}
+								target='_blank'
+							>
+								Live
+							</Button>
+						)}
 					</Box>
 				</Box>
 			</Box>
